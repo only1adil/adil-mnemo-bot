@@ -1,0 +1,17 @@
+[Unit]
+Description=Mnemo C2 Telegram Bot - English Learning Bot
+After=network.target
+
+[Service]
+Type=simple
+User=mnemo
+WorkingDirectory=/opt/mnemo
+ExecStart=/usr/bin/python3 /opt/mnemo/bot.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+
+[Install]
+WantedBy=multi-user.target

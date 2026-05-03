@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Database & Logs
+*.db
+*.db-journal
+*.log
+/var/log/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+backup-*.tar.gz
+mnemo.db

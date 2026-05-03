@@ -1,0 +1,1930 @@
+[
+{
+    "id": 1,
+    "word": "delicate",
+    "translation": "деликатный, хрупкий",
+    "association": "Хрупкий предмет и деликатная ситуация.",
+    "example": "The delicate flowers need careful handling.",
+    "ipa": "/ˈdel.ɪ.kət/"
+  },
+  {
+    "id": 2,
+    "word": "elephant",
+    "translation": "слон",
+    "association": "Еле фанту выпил катаясь на слоне.",
+    "example": "The elephant is the largest land animal.",
+    "ipa": "/ˈel.ɪ.fənt/"
+  },
+  {
+    "id": 3,
+    "word": "grateful",
+    "translation": "благодарный",
+    "association": "Я благодарен, что обошлось без града, фух",
+    "example": "I am grateful for your help and support.",
+    "ipa": "/ˈɡreɪt.fəl/"
+  },
+  {
+    "id": 4,
+    "word": "horizon",
+    "translation": "горизонт",
+    "association": "Моя любимая горизонтальная игра - Forza Horizon 5.",
+    "example": "The sun disappeared below the horizon.",
+    "ipa": "/həˈraɪ.zən/"
+  },
+  {
+    "id": 5,
+    "word": "invisible",
+    "translation": "невидимый",
+    "association": "Невидимый человек оставил визитку.",
+    "example": "The wind is invisible but we can feel it.",
+    "ipa": "/ɪnˈvɪz.ɪ.bəl/"
+  },
+  {
+    "id": 6,
+    "word": "journey",
+    "translation": "путешествие, поездка",
+    "association": "Взять журнал в долгое путешествие",
+    "example": "Our journey to Paris was unforgettable.",
+    "ipa": "`/ˈdʒɜː.ni/`"
+  },
+  {
+    "id": 7,
+    "word": "zeal",
+    "translation": "рвение, усердие",
+    "association": "Дед с таким рвением катал нас на своем Зил.",
+    "example": "She approached every task with great zeal.",
+    "ipa": "/ziːl/"
+  },
+  {
+    "id": 8,
+    "word": "light",
+    "translation": "свет",
+    "association": "Всю ночь без света играл в лайт-версию игры.",
+    "example": "The light is too bright in here.",
+    "ipa": "/laɪt/"
+  },
+  {
+    "id": 9,
+    "word": "mountain",
+    "translation": "гора",
+    "association": "Пью маунтин-дью, чтобы взобраться на эту гору.",
+    "example": "They climbed the mountain together.",
+    "ipa": "/ˈmaʊn.tɪn/"
+  },
+  {
+    "id": 10,
+    "word": "nature",
+    "translation": "природа",
+    "association": "Натура человека - это его природа.",
+    "example": "We should protect nature.",
+    "ipa": "/ˈneɪ.tʃər/"
+  },
+  {
+    "id": 11,
+    "word": "power",
+    "translation": "сила, мощь",
+    "association": "Мы в детстве смотрели сериал \"Пауэр Рейнджеры\", где главные герои были наделены силой и мощью.",
+    "example": "Knowledge is power.",
+    "ipa": "/ˈpaʊ.ər/"
+  },
+  {
+    "id": 12,
+    "word": "respect",
+    "translation": "уважение",
+    "association": "Я уважаю тебя и поэтому выражаю свой респект.",
+    "example": "You should respect your parents.",
+    "ipa": "/rɪˈspekt/"
+  },
+  {
+    "id": 13,
+    "word": "trust",
+    "translation": "доверие",
+    "association": "Траст фонд - это когда доверяешь человеку свои активы.",
+    "example": "Trust is important in relationships.",
+    "ipa": "/trʌst/"
+  },
+  {
+    "id": 14,
+    "word": "victory",
+    "translation": "победа",
+    "association": "Виктория победительница.",
+    "example": "The team celebrated their victory.",
+    "ipa": "/ˈvɪk.tər.i/"
+  },
+  {
+    "id": 15,
+    "word": "wisdom",
+    "translation": "мудрость",
+    "association": "Весь его дом наполнен мудростью.",
+    "example": "Wisdom comes with experience.",
+    "ipa": "/ˈwɪz.dəm/"
+  },
+  {
+    "id": 16,
+    "word": "brave",
+    "translation": "смелый",
+    "association": "Я становлюсь смелым, когда рублю бревно",
+    "example": "The brave soldier saved lives.",
+    "ipa": "/breɪv/"
+  },
+  {
+    "id": 17,
+    "word": "focus",
+    "translation": "фокус, концентрация",
+    "association": "Чтобы выполнить фокус, нужно сконцентрироваться.",
+    "example": "Focus on your goals.",
+    "ipa": "/ˈfoʊ.kəs/"
+  },
+  {
+    "id": 18,
+    "word": "habit",
+    "translation": "привычка",
+    "association": "Хабит Бильбо Беггинс имеет привычку вкусно поесть.",
+    "example": "Reading is a good habit.",
+    "ipa": "/ˈhæb.ɪt/"
+  },
+  {
+    "id": 19,
+    "word": "joy",
+    "translation": "радость",
+    "association": "Просмотр фильма Джой доставило мне радость и удовольствие.",
+    "example": "She felt pure joy.",
+    "ipa": "/dʒɔɪ/"
+  },
+  {
+    "id": 20,
+    "word": "learn",
+    "translation": "учить",
+    "association": "Лер научи нас чему-то новому.",
+    "example": "I want to learn English.",
+    "ipa": "/lɜːrn/"
+  },
+  {
+    "id": 21,
+    "word": "quick",
+    "translation": "быстрый",
+    "association": "Жаба прыгает быстро издавая звук квик-квак.",
+    "example": "He is very quick.",
+    "ipa": "/kwɪk/"
+  },
+  {
+    "id": 22,
+    "word": "strong",
+    "translation": "сильный",
+    "association": "У Нила Армстронга - сильная рука.",
+    "example": "He is physically strong.",
+    "ipa": "/strɒŋ/"
+  },
+  {
+    "id": 23,
+    "word": "time",
+    "translation": "время",
+    "association": "Время прочитать журнал Тайм",
+    "example": "Time is valuable.",
+    "ipa": "/taɪm/"
+  },
+  {
+    "id": 24,
+    "word": "use",
+    "translation": "использовать",
+    "association": "Юзер использует приложение.",
+    "example": "Use this tool wisely.",
+    "ipa": "/juːz/"
+  },
+  {
+    "id": 25,
+    "word": "x-factor",
+    "translation": "особенность",
+    "association": "Мы смотрели шоу икс-фактор про особенности выступающего человека.",
+    "example": "She has the X-factor.",
+    "ipa": "/ˈeks.fæk.tər/"
+  },
+  {
+    "id": 26,
+    "word": "young",
+    "translation": "молодой",
+    "association": "Молодой китаец Янг.",
+    "example": "He is still very young.",
+    "ipa": "/jʌŋ/"
+  },
+  {
+    "id": 27,
+    "word": "Chill",
+    "translation": "расслабиться",
+    "association": "Лёд и чечил — это расслабление.",
+    "example": "I am just going to stay home and chill this weekend.",
+    "ipa": "/tʃɪl/"
+  },
+  {
+    "id": 28,
+    "word": "dare",
+    "translation": "осмелиться",
+    "association": "Если осмелишься, то давай, дерзай (dare)!",
+    "example": "I dare you to try it.",
+    "ipa": "/deər/"
+  },
+  {
+    "id": 29,
+    "word": "grab",
+    "translation": "хватать",
+    "association": "Схватить грабителя.",
+    "example": "He tried to grab the bag.",
+    "ipa": "/ɡræb/"
+  },
+  {
+    "id": 30,
+    "word": "mess",
+    "translation": "беспорядок",
+    "association": "Месси устроил беспорядок.",
+    "example": "Your room is a mess.",
+    "ipa": "/mes/"
+  },
+  {
+    "id": 31,
+    "word": "nerve",
+    "translation": "нерв",
+    "association": "Нервы как нерв оголённый.",
+    "example": "This noise gets on my nerves.",
+    "ipa": "/nɜːrv/"
+  },
+  {
+    "id": 32,
+    "word": "pour",
+    "translation": "наливать",
+    "association": "Если наливать теплую воду на кожу, то расширяются поры.",
+    "example": "She poured some tea into the cup.",
+    "ipa": "/pɔːr/"
+  },
+  {
+    "id": 33,
+    "word": "quit",
+    "translation": "бросать",
+    "association": "Я к Вите бросил мяч.",
+    "example": "He decided to quit his job.",
+    "ipa": "/kwɪt/"
+  },
+  {
+    "id": 34,
+    "word": "view",
+    "translation": "вид",
+    "association": "Во время интервью вид у меня должен быть шикарным.",
+    "example": "The view from the window is amazing.",
+    "ipa": "/vjuː/"
+  },
+  {
+    "id": 35,
+    "word": "zone",
+    "translation": "зона",
+    "association": "Зона - не тюрьма, а просто зона.",
+    "example": "This is a safe zone.",
+    "ipa": "/zoʊn/"
+  },
+  {
+    "id": 36,
+    "word": "aim",
+    "translation": "цель",
+    "association": "Айм целиться эт ю.",
+    "example": "He aimed at the target.",
+    "ipa": "/eɪm/"
+  },
+  {
+    "id": 37,
+    "word": "beat",
+    "translation": "бить",
+    "association": "Бить в барабан под бит.",
+    "example": "He can beat anyone in the game.",
+    "ipa": "/biːt/"
+  },
+  {
+    "id": 38,
+    "word": "calm",
+    "translation": "спокойствие",
+    "association": "Калмык спокойно пасёт коней",
+    "example": "Stay calm under pressure.",
+    "ipa": "/kɑːm/"
+  },
+  {
+    "id": 39,
+    "word": "hunt",
+    "translation": "охотиться",
+    "association": "Хедхантеры охотятся на специалистов.",
+    "example": "They hunt in the forest.",
+    "ipa": "/hʌnt/"
+  },
+  {
+    "id": 40,
+    "word": "joke",
+    "translation": "шутка",
+    "association": "Джокер шутит над Бэтменом.",
+    "example": "He told a funny joke.",
+    "ipa": "/dʒoʊk/"
+  },
+  {
+    "id": 41,
+    "word": "knock",
+    "translation": "стучать",
+    "association": "После нокаута стучат бойцу по лбу.",
+    "example": "Please knock before entering.",
+    "ipa": "/nɑːk/"
+  },
+  {
+    "id": 42,
+    "word": "move",
+    "translation": "двигаться",
+    "association": "Корова кричит му в движении.",
+    "example": "We need to move faster.",
+    "ipa": "/muːv/"
+  },
+  {
+    "id": 43,
+    "word": "note",
+    "translation": "заметка",
+    "association": "Записал заметку в ноут.",
+    "example": "She wrote a note.",
+    "ipa": "/noʊt/"
+  },
+  {
+    "id": 44,
+    "word": "push",
+    "translation": "толкать",
+    "association": "Толкать пушку.",
+    "example": "Push the door to open it.",
+    "ipa": "/pʊʃ/"
+  },
+  {
+    "id": 45,
+    "word": "bite",
+    "translation": "кусать",
+    "association": "Тебя байтят в игре, а ты кусаешься.",
+    "example": "The dog tried to bite me.",
+    "ipa": "/baɪt/"
+  },
+  {
+    "id": 46,
+    "word": "call",
+    "translation": "звонить",
+    "association": "Колокол звонит.",
+    "example": "I will call you later.",
+    "ipa": "/kɔːl/"
+  },
+  {
+    "id": 47,
+    "word": "fall",
+    "translation": "падать",
+    "association": "Упал во время матча и дали фол.",
+    "example": "Be careful not to fall.",
+    "ipa": "/fɔːl/"
+  },
+  {
+    "id": 48,
+    "word": "hit",
+    "translation": "ударить",
+    "association": "Ударил музыканта, который написал хит.",
+    "example": "He hit the ball hard.",
+    "ipa": "/hɪt/"
+  },
+  {
+    "id": 49,
+    "word": "laugh",
+    "translation": "смеяться",
+    "association": "Хватит смеяться, лафа кончилась.",
+    "example": "They laugh at the joke.",
+    "ipa": "/læf/"
+  },
+  {
+    "id": 50,
+    "word": "mix",
+    "translation": "мешать",
+    "association": "Диджей мешает мне миксовать треки.",
+    "example": "Mix the ingredients well.",
+    "ipa": "/mɪks/"
+  },
+  {
+    "id": 51,
+    "word": "win",
+    "translation": "побеждать",
+    "association": "Побеждать в дегустации вин",
+    "example": "We want to win the game.",
+    "ipa": "/wɪn/"
+  },
+  {
+    "id": 52,
+    "word": "break",
+    "translation": "ломать",
+    "association": "Сломал нос брейк-дансеру.",
+    "example": "Be careful not to break it.",
+    "ipa": "/breɪk/"
+  },
+  {
+    "id": 53,
+    "word": "drive",
+    "translation": "водить",
+    "association": "Я вожу машину с легким драйвом.",
+    "example": "He can drive a car.",
+    "ipa": "/draɪv/"
+  },
+  {
+    "id": 54,
+    "word": "look",
+    "translation": "смотреть",
+    "association": "Смотрю на лук и плачу.",
+    "example": "Look at the sky.",
+    "ipa": "/lʊk/"
+  },
+  {
+    "id": 55,
+    "word": "make",
+    "translation": "делать",
+    "association": "Я умею делать мейк-ап.",
+    "example": "I make coffee every morning.",
+    "ipa": "/meɪk/"
+  },
+  {
+    "id": 56,
+    "word": "pull",
+    "translation": "тянуть",
+    "association": "Дедпул тянет весь фильм.",
+    "example": "Pull the door.",
+    "ipa": "/pʊl/"
+  },
+  {
+    "id": 57,
+    "word": "read",
+    "translation": "читать",
+    "association": "Читаю Майн Рида.",
+    "example": "I read books every day.",
+    "ipa": "/riːd/"
+  },
+  {
+    "id": 58,
+    "word": "walk",
+    "translation": "идти",
+    "association": "Волк идёт.",
+    "example": "We walk in the park.",
+    "ipa": "/wɔːk/"
+  },
+  {
+    "id": 59,
+    "word": "build",
+    "translation": "строить",
+    "association": "Бодибилдер строит тело.",
+    "example": "They build a house.",
+    "ipa": "/bɪld/"
+  },
+  {
+    "id": 60,
+    "word": "catch",
+    "translation": "ловить",
+    "association": "Ловлю ртом кетчуп.",
+    "example": "Catch the ball.",
+    "ipa": "/kætʃ/"
+  },
+  {
+    "id": 61,
+    "word": "lose",
+    "translation": "проигрывать",
+    "association": "Лузер снова проиграл.",
+    "example": "We don’t want to lose.",
+    "ipa": "/luːz/"
+  },
+  {
+    "id": 62,
+    "word": "agree",
+    "translation": "соглашаться",
+    "association": "Ты агришься, но говоришь: ок, согласен.",
+    "example": "I agree with you.",
+    "ipa": "/əˈɡriː/"
+  },
+  {
+    "id": 63,
+    "word": "allow",
+    "translation": "разрешать",
+    "association": "Алло, разрешите представиться.",
+    "example": "They allow us to enter.",
+    "ipa": "/əˈlaʊ/"
+  },
+  {
+    "id": 64,
+    "word": "compare",
+    "translation": "сравнивать",
+    "association": "Компы сравниваешь.",
+    "example": "Compare these two options.",
+    "ipa": "/kəmˈpeər/"
+  },
+  {
+    "id": 65,
+    "word": "prepare",
+    "translation": "готовить",
+    "association": "Доктор Препэр готовит колу сам.",
+    "example": "Prepare for the exam.",
+    "ipa": "/prɪˈpeər/"
+  },
+  {
+    "id": 66,
+    "word": "seem",
+    "translation": "казаться",
+    "association": "В симсе кажется жизнь лучше.",
+    "example": "It seems easy.",
+    "ipa": "/siːm/"
+  },
+  {
+    "id": 67,
+    "word": "teach",
+    "translation": "учить",
+    "association": "Лило учит Стича..",
+    "example": "She teaches English.",
+    "ipa": "/tiːtʃ/"
+  },
+  {
+    "id": 68,
+    "word": "meet",
+    "translation": "встречать",
+    "association": "Митинг у нас в стране - это встреча с дубинкой.",
+    "example": "Nice to meet you.",
+    "ipa": "/miːt/"
+  },
+  {
+    "id": 69,
+    "word": "argue",
+    "translation": "спорить",
+    "association": "Нужны аргументы, когда споришь.",
+    "example": "They often argue.",
+    "ipa": "/ˈɑːr.ɡjuː/"
+  },
+  {
+    "id": 70,
+    "word": "arrive",
+    "translation": "прибывать",
+    "association": "Я прибываю в наслаждении с пиццей Аррива.",
+    "example": "We arrive at 6 pm.",
+    "ipa": "/əˈraɪv/"
+  },
+  {
+    "id": 71,
+    "word": "attack",
+    "translation": "атаковать",
+    "association": "Паническая атака атакует меня.",
+    "example": "The army will attack.",
+    "ipa": "/əˈtæk/"
+  },
+  {
+    "id": 72,
+    "word": "carry",
+    "translation": "нести",
+    "association": "Несу индусу соус карри.",
+    "example": "Carry this bag.",
+    "ipa": "/ˈkær.i/"
+  },
+  {
+    "id": 73,
+    "word": "cause",
+    "translation": "вызывать",
+    "association": "Пастух свистом вызывает коз.",
+    "example": "This can cause problems.",
+    "ipa": "/kɔːz/"
+  },
+  {
+    "id": 74,
+    "word": "die",
+    "translation": "умирать",
+    "association": "Дай умереть спокойно.",
+    "example": "Plants die without water.",
+    "ipa": "/daɪ/"
+  },
+  {
+    "id": 75,
+    "word": "feel",
+    "translation": "чувствовать",
+    "association": "Фил чувствует ритм.",
+    "example": "I feel good today.",
+    "ipa": "/fiːl/"
+  },
+  {
+    "id": 76,
+    "word": "finish",
+    "translation": "заканчивать",
+    "association": "Финиширую марафон и заканчиваю с бегом.",
+    "example": "Finish your work.",
+    "ipa": "/ˈfɪn.ɪʃ/"
+  },
+  {
+    "id": 77,
+    "word": "keep",
+    "translation": "держать",
+    "association": "Держу в руках билет на Кипр.",
+    "example": "Keep going.",
+    "ipa": "/kiːp/"
+  },
+  {
+    "id": 78,
+    "word": "leave",
+    "translation": "уходить",
+    "association": "После ливня ухожу.",
+    "example": "I leave at 5 pm.",
+    "ipa": "/liːv/"
+  },
+  {
+    "id": 79,
+    "word": "let",
+    "translation": "позволять",
+    "association": "Летчик позволяет сесть за штурвал.",
+    "example": "Let me help you.",
+    "ipa": "/let/"
+  },
+  {
+    "id": 80,
+    "word": "like",
+    "translation": "нравиться",
+    "association": "Поставлю лайк, потому что нравится.",
+    "example": "I like this song.",
+    "ipa": "/laɪk/"
+  },
+  {
+    "id": 81,
+    "word": "send",
+    "translation": "отправлять",
+    "association": "Адам Сэндлер отправляет сообщение.",
+    "example": "Send me a message.",
+    "ipa": "/send/"
+  },
+  {
+    "id": 82,
+    "word": "person",
+    "translation": "человек",
+    "association": "Этот человек - важная персона.",
+    "example": "He is a kind person.",
+    "ipa": "/ˈpɜːr.sən/"
+  },
+  {
+    "id": 83,
+    "word": "singer",
+    "translation": "певец",
+    "association": "Певец выступил в синем костюме.",
+    "example": "The singer has a great voice.",
+    "ipa": "/ˈsɪŋ.ər/"
+  },
+  {
+    "id": 84,
+    "word": "rest",
+    "translation": "отдыхать",
+    "association": "Отдыхать в ресторане.",
+    "example": "I want to rest after work.",
+    "ipa": "/rest/"
+  },
+  {
+    "id": 85,
+    "word": "sell",
+    "translation": "продавать",
+    "association": "Человек сел и начал продавать.",
+    "example": "They sell fresh fruits.",
+    "ipa": "/sel/"
+  },
+  {
+    "id": 86,
+    "word": "waiter",
+    "translation": "официант",
+    "association": "Ветер сдул официанта.",
+    "example": "The waiter brought the menu.",
+    "ipa": "/ˈweɪ.tər/"
+  },
+  {
+    "id": 87,
+    "word": "child",
+    "translation": "ребенок",
+    "association": "Ребенок пьет чай.",
+    "example": "The child is playing.",
+    "ipa": "/tʃaɪld/"
+  },
+  {
+    "id": 88,
+    "word": "wife",
+    "translation": "жена",
+    "association": "Жена ловит Wi-Fi.",
+    "example": "His wife is very kind.",
+    "ipa": "/waɪf/"
+  },
+  {
+    "id": 89,
+    "word": "heavy",
+    "translation": "тяжелый",
+    "association": "Хэви-метал - тяжелый металл.",
+    "example": "This bag is very heavy.",
+    "ipa": "/ˈhev.i/"
+  },
+  {
+    "id": 90,
+    "word": "sad",
+    "translation": "грустный",
+    "association": "Грустный мужчина сидит в саду.",
+    "example": "She feels sad today.",
+    "ipa": "/sæd/"
+  },
+  {
+    "id": 91,
+    "word": "buy",
+    "translation": "покупать",
+    "association": "Завтра пойдем покупать байк.",
+    "example": "I want to buy a car.",
+    "ipa": "/baɪ/"
+  },
+  {
+    "id": 92,
+    "word": "visit",
+    "translation": "навещать",
+    "association": "Навестил и оставил визитку.",
+    "example": "I visit my friends often.",
+    "ipa": "/ˈvɪz.ɪt/"
+  },
+  {
+    "id": 93,
+    "word": "driver",
+    "translation": "водитель",
+    "association": "Водитель настраивает драйвер.",
+    "example": "The driver stopped the car.",
+    "ipa": "/ˈdraɪ.vər/"
+  },
+  {
+    "id": 94,
+    "word": "tasty",
+    "translation": "вкусный",
+    "association": "У пиццы вкусное тесто.",
+    "example": "This cake is very tasty.",
+    "ipa": "/ˈteɪs.ti/"
+  },
+  {
+    "id": 95,
+    "word": "study",
+    "translation": "учиться",
+    "association": "Студент учится, чтобы сдать экзамен.",
+    "example": "I study every day.",
+    "ipa": "/ˈstʌd.i/"
+  },
+  {
+    "id": 96,
+    "word": "builder",
+    "translation": "строитель",
+    "association": "Бодибилдер является строителем своего тела.",
+    "example": "The builder works hard.",
+    "ipa": "/ˈbɪl.dər/"
+  },
+  {
+    "id": 97,
+    "word": "kind",
+    "translation": "добрый",
+    "association": "Добрый дядя дал киндер.",
+    "example": "She is very kind.",
+    "ipa": "/kaɪnd/"
+  },
+  {
+    "id": 98,
+    "word": "family",
+    "translation": "семья",
+    "association": "У всех в семье одна фамилия.",
+    "example": "I love my family.",
+    "ipa": "/ˈfæm.ɪ.li/"
+  },
+  {
+    "id": 99,
+    "word": "palace",
+    "translation": "дворец",
+    "association": "Палас во дворце.",
+    "example": "The king lives in a palace.",
+    "ipa": "/ˈpæl.ɪs/"
+  },
+  {
+    "id": 100,
+    "word": "know",
+    "translation": "знать",
+    "association": "Новые знания.",
+    "example": "I know the answer.",
+    "ipa": "/noʊ/"
+  },
+  {
+    "id": 101,
+    "word": "ask",
+    "translation": "спрашивать",
+    "association": "Спросить у Аскара.",
+    "example": "Ask your question.",
+    "ipa": "/ɑːsk/"
+  },
+  {
+    "id": 102,
+    "word": "live",
+    "translation": "жить",
+    "association": "Лев живёт в Африке.",
+    "example": "I live in a big city.",
+    "ipa": "/lɪv/"
+  },
+  {
+    "id": 103,
+    "word": "take",
+    "translation": "взять",
+    "association": "Взял стейк.",
+    "example": "Take this book.",
+    "ipa": "/teɪk/"
+  },
+  {
+    "id": 104,
+    "word": "work",
+    "translation": "работать",
+    "association": "Вор к работе не приспособлен.",
+    "example": "I work every day.",
+    "ipa": "/wɜːrk/"
+  },
+  {
+    "id": 105,
+    "word": "poor",
+    "translation": "бедный",
+    "association": "Бедный в пурпурной футболке.",
+    "example": "He is very poor.",
+    "ipa": "/pʊr/"
+  },
+  {
+    "id": 106,
+    "word": "rich",
+    "translation": "богатый",
+    "association": "Богатый Ричард.",
+    "example": "She is very rich.",
+    "ipa": "/rɪtʃ/"
+  },
+  {
+    "id": 107,
+    "word": "weak",
+    "translation": "слабый",
+    "association": "Слабая Вика.",
+    "example": "He feels weak today.",
+    "ipa": "/wiːk/"
+  },
+  {
+    "id": 108,
+    "word": "favorite",
+    "translation": "любимый",
+    "association": "Мой любимый клуб фаворит в этом сезоне.",
+    "example": "This is my favorite song.",
+    "ipa": "/ˈfeɪ.vər.ɪt/"
+  },
+  {
+    "id": 109,
+    "word": "slow",
+    "translation": "медленный",
+    "association": "Слоу-мо - это эффект замедленной съемки.",
+    "example": "The turtle is very slow.",
+    "ipa": "/sloʊ/"
+  },
+  {
+    "id": 110,
+    "word": "fast",
+    "translation": "быстрый",
+    "association": "Фастфуд - быстрая еда.",
+    "example": "He runs very fast.",
+    "ipa": "/fæst/"
+  },
+  {
+    "id": 111,
+    "word": "talented",
+    "translation": "талантливый",
+    "association": "Ты просто талант, Тед.",
+    "example": "She is a talented artist.",
+    "ipa": "/ˈtæl.ən.tɪd/"
+  },
+  {
+    "id": 112,
+    "word": "patient",
+    "translation": "терпеливый",
+    "association": "Пациент должен быть терпеливым.",
+    "example": "Be patient with others.",
+    "ipa": "/ˈpeɪ.ʃənt/"
+  },
+  {
+    "id": 113,
+    "word": "come",
+    "translation": "приходить",
+    "association": "Приди ко мне (кам).",
+    "example": "Come to my house.",
+    "ipa": "/kʌm/"
+  },
+  {
+    "id": 114,
+    "word": "go",
+    "translation": "идти, ездить",
+    "association": "Идём играть в го.",
+    "example": "I go to school.",
+    "ipa": "/ɡoʊ/"
+  },
+  {
+    "id": 115,
+    "word": "do",
+    "translation": "делать",
+    "association": "Думать прежде, чем делать.",
+    "example": "Do your homework.",
+    "ipa": "/duː/"
+  },
+  {
+    "id": 116,
+    "word": "eat",
+    "translation": "кушать",
+    "association": "Eat meat — кушать мясо.",
+    "example": "I eat breakfast every day.",
+    "ipa": "/iːt/"
+  },
+  {
+    "id": 117,
+    "word": "play",
+    "translation": "играть",
+    "association": "играть в PlayStation.",
+    "example": "Kids play outside.",
+    "ipa": "/pleɪ/"
+  },
+  {
+    "id": 118,
+    "word": "stand",
+    "translation": "стоять",
+    "association": "Стоять возле стенда.",
+    "example": "Stand here.",
+    "ipa": "/stænd/"
+  },
+  {
+    "id": 119,
+    "word": "put",
+    "translation": "положить",
+    "association": "Положил пуговицу на стол",
+    "example": "Put the book here.",
+    "ipa": "/pʊt/"
+  },
+  {
+    "id": 120,
+    "word": "pay",
+    "translation": "платить",
+    "association": "Заплатил через PayPal.",
+    "example": "I pay for food.",
+    "ipa": "/peɪ/"
+  },
+  {
+    "id": 121,
+    "word": "forget",
+    "translation": "забывать",
+    "association": "Забыл пакет (фогет).",
+    "example": "Don’t forget your keys.",
+    "ipa": "/fəˈɡet/"
+  },
+  {
+    "id": 122,
+    "word": "remember",
+    "translation": "помнить",
+    "association": "Помню фильм Рэмбо.",
+    "example": "I remember your name.",
+    "ipa": "/rɪˈmem.bər/"
+  },
+  {
+    "id": 123,
+    "word": "listen",
+    "translation": "слушать",
+    "association": "В Лисяне слушаю музыку.",
+    "example": "Listen carefully.",
+    "ipa": "/ˈlɪs.ən/"
+  },
+  {
+    "id": 124,
+    "word": "painter",
+    "translation": "художник",
+    "association": "Художник рисует в Paint.",
+    "example": "The painter creates art.",
+    "ipa": "/ˈpeɪn.tər/"
+  },
+  {
+    "id": 125,
+    "word": "fork",
+    "translation": "вилка",
+    "association": "Форточку открыли вилкой.",
+    "example": "Use a fork to eat.",
+    "ipa": "/fɔːrk/"
+  },
+  {
+    "id": 126,
+    "word": "sheet",
+    "translation": "листок",
+    "association": "Щит нарисован на листочке.",
+    "example": "Take a sheet of paper.",
+    "ipa": "/ʃiːt/"
+  },
+  {
+    "id": 127,
+    "word": "ear",
+    "translation": "ухо",
+    "association": "У Иры большие уши.",
+    "example": "My ear hurts.",
+    "ipa": "/ɪər/"
+  },
+  {
+    "id": 128,
+    "word": "leg",
+    "translation": "нога",
+    "association": "Наступил на Лего, теперь болит нога.",
+    "example": "My leg is tired.",
+    "ipa": "/leɡ/"
+  },
+  {
+    "id": 129,
+    "word": "stomach",
+    "translation": "живот",
+    "association": "У стоматолога болит живот.",
+    "example": "My stomach hurts.",
+    "ipa": "/ˈstʌm.ək/"
+  },
+  {
+    "id": 130,
+    "word": "eye",
+    "translation": "глаз",
+    "association": "Закрыл глаза и сказал «ай».",
+    "example": "This story tells about a pirate with one eye.",
+    "ipa": "/aɪ/"
+  },
+  {
+    "id": 131,
+    "word": "lips",
+    "translation": "губы",
+    "association": "У Лепса большие губы.",
+    "example": "Her lips are red.",
+    "ipa": "/lɪps/"
+  },
+  {
+    "id": 132,
+    "word": "map",
+    "translation": "карта",
+    "association": "Путешествие на мопеде с картой.",
+    "example": "Look at the map.",
+    "ipa": "/mæp/"
+  },
+  {
+    "id": 133,
+    "word": "hammer",
+    "translation": "молоток",
+    "association": "Молоток в Хаммере.",
+    "example": "Use a hammer.",
+    "ipa": "/ˈhæm.ər/"
+  },
+  {
+    "id": 134,
+    "word": "key",
+    "translation": "ключ",
+    "association": "Ключи от Киа.",
+    "example": "I lost my key.",
+    "ipa": "/kiː/"
+  },
+  {
+    "id": 135,
+    "word": "iron",
+    "translation": "утюг",
+    "association": "На утюг пролил айран.",
+    "example": "The iron is hot.",
+    "ipa": "/ˈaɪ.ərn/"
+  },
+  {
+    "id": 136,
+    "word": "shirt",
+    "translation": "рубашка",
+    "association": "На рубашке изображён чёрт .",
+    "example": "He wears a white shirt.",
+    "ipa": "/ʃɜːrt/"
+  },
+  {
+    "id": 137,
+    "word": "attractive",
+    "translation": "привлекательный",
+    "association": "Привлекательный аттракцион.",
+    "example": "She is very attractive.",
+    "ipa": "/əˈtræk.tɪv/"
+  },
+  {
+    "id": 138,
+    "word": "attentive",
+    "translation": "внимательный",
+    "association": "Внимательно смотрим на тень.",
+    "example": "He is very attentive.",
+    "ipa": "/əˈten.tɪv/"
+  },
+  {
+    "id": 139,
+    "word": "cashier",
+    "translation": "кассир",
+    "association": "У кассира много кэша.",
+    "example": "The cashier is friendly.",
+    "ipa": "/kæˈʃɪər/"
+  },
+  {
+    "id": 140,
+    "word": "accountant",
+    "translation": "бухгалтер",
+    "association": "Бухгалтер создал аккаунт.",
+    "example": "The accountant checks numbers.",
+    "ipa": "/əˈkaʊn.tənt/"
+  },
+  {
+    "id": 141,
+    "word": "assistant",
+    "translation": "помощник",
+    "association": "Помощник ассистента.",
+    "example": "She works as an assistant.",
+    "ipa": "/əˈsɪs.tənt/"
+  },
+  {
+    "id": 142,
+    "word": "police officer",
+    "translation": "полицейский",
+    "association": "У офицера есть страховой полис.",
+    "example": "The police officer helps people.",
+    "ipa": "/pəˈliːs ˈɑːf.ɪ.sər/"
+  },
+  {
+    "id": 143,
+    "word": "silly",
+    "translation": "глупый",
+    "association": "Сильный, но глупый.",
+    "example": "That was a silly mistake.",
+    "ipa": "/ˈsɪl.i/"
+  },
+  {
+    "id": 144,
+    "word": "skinny",
+    "translation": "худой",
+    "association": "Скинул вес и похудел.",
+    "example": "He is very skinny.",
+    "ipa": "/ˈskɪn.i/"
+  },
+  {
+    "id": 145,
+    "word": "fat",
+    "translation": "толстый",
+    "association": "Толстый фотограф (фэт).",
+    "example": "The cat is fat.",
+    "ipa": "/fæt/"
+  },
+  {
+    "id": 146,
+    "word": "shy",
+    "translation": "застенчивый",
+    "association": "Застенчивому предлагают чай.",
+    "example": "She is very shy.",
+    "ipa": "/ʃaɪ/"
+  },
+  {
+    "id": 147,
+    "word": "wash",
+    "translation": "мыть",
+    "association": "Мой голову, чтобы вши не завелись (уош).",
+    "example": "Wash your hands.",
+    "ipa": "/wɒʃ/"
+  },
+  {
+    "id": 148,
+    "word": "start",
+    "translation": "начинать",
+    "association": "Со знака старт, начинаем бег.",
+    "example": "Let’s start now.",
+    "ipa": "/stɑːrt/"
+  },
+  {
+    "id": 149,
+    "word": "find",
+    "translation": "находить",
+    "association": "Нашел фантик.",
+    "example": "I find my keys.",
+    "ipa": "/faɪnd/"
+  },
+  {
+    "id": 150,
+    "word": "bring",
+    "translation": "приносить",
+    "association": "Bring a ring — принести кольцо.",
+    "example": "Bring me a book.",
+    "ipa": "/brɪŋ/"
+  },
+  {
+    "id": 151,
+    "word": "cook",
+    "translation": "готовить",
+    "association": "Готовлю еду в кухне.",
+    "example": "I cook dinner.",
+    "ipa": "/kʊk/"
+  },
+  {
+    "id": 152,
+    "word": "check",
+    "translation": "проверять",
+    "association": "Кассир проверяет чек",
+    "example": "Check your work.",
+    "ipa": "/tʃek/"
+  },
+  {
+    "id": 153,
+    "word": "stay",
+    "translation": "оставаться",
+    "association": "Всем стоять, оставаться на своих местах.",
+    "example": "Stay here.",
+    "ipa": "/steɪ/"
+  },
+  {
+    "id": 154,
+    "word": "think",
+    "translation": "думать",
+    "association": "Думать о цинке.",
+    "example": "Think before you speak.",
+    "ipa": "/θɪŋk/"
+  },
+  {
+    "id": 155,
+    "word": "blend",
+    "translation": "смешивать",
+    "association": "Смешал Blend-a-med и Colgate .",
+    "example": "We blend the colors.",
+    "ipa": "/blend/"
+  },
+  {
+    "id": 156,
+    "word": "early",
+    "translation": "рано",
+    "association": "Рано утром пить Эрл Грей.",
+    "example": "I wake up early.",
+    "ipa": "/ˈɜːr.li/"
+  },
+  {
+    "id": 157,
+    "word": "late",
+    "translation": "поздно",
+    "association": "Позднее лето.",
+    "example": "It is too late.",
+    "ipa": "/leɪt/"
+  },
+  {
+    "id": 158,
+    "word": "support",
+    "translation": "поддерживать",
+    "association": "Поддерживать рукой яблоко сорта апорт (созвучно с «сапорт»)",
+    "example": "I support my friends.",
+    "ipa": "/səˈpɔːrt/"
+  },
+  {
+    "id": 159,
+    "word": "cover",
+    "translation": "прикрывать",
+    "association": "Прикрыть ковер.",
+    "example": "Cover the table.",
+    "ipa": "/ˈkʌv.ər/"
+  },
+  {
+    "id": 160,
+    "word": "so",
+    "translation": "такой",
+    "association": "Соус такой вкусный.",
+    "example": "This is so good.",
+    "ipa": "/soʊ/"
+  },
+  {
+    "id": 161,
+    "word": "very",
+    "translation": "очень",
+    "association": "Очень хочется верить.",
+    "example": "She is very happy.",
+    "ipa": "/ˈver.i/"
+  },
+  {
+    "id": 162,
+    "word": "often",
+    "translation": "часто",
+    "association": "Часто в одной и той же кофте.",
+    "example": "I often read books.",
+    "ipa": "/ˈɑːf.ən/"
+  },
+  {
+    "id": 163,
+    "word": "fun",
+    "translation": "веселый",
+    "association": "По фану, ради веселья.",
+    "example": "This game is fun.",
+    "ipa": "/fʌn/"
+  },
+  {
+    "id": 164,
+    "word": "hungry",
+    "translation": "голодный",
+    "association": "«Angry and hungry» — «Злой и голодный»",
+    "example": "I am very hungry.",
+    "ipa": "/ˈhʌŋ.ɡri/"
+  },
+  {
+    "id": 165,
+    "word": "ready",
+    "translation": "готовый",
+    "association": "Редиска готова.",
+    "example": "I am ready.",
+    "ipa": "/ˈred.i/"
+  },
+  {
+    "id": 166,
+    "word": "tax",
+    "translation": "налог",
+    "association": "Таксист платит налоги.",
+    "example": "He pays tax.",
+    "ipa": "/tæks/"
+  },
+  {
+    "id": 167,
+    "word": "change",
+    "translation": "менять",
+    "association": "Поменял чемодан.",
+    "example": "Change your clothes.",
+    "ipa": "/tʃeɪndʒ/"
+  },
+  {
+    "id": 168,
+    "word": "serve",
+    "translation": "обслуживать",
+    "association": "Сервис - обслуживание.",
+    "example": "They serve food.",
+    "ipa": "/sɜːrv/"
+  },
+  {
+    "id": 169,
+    "word": "swim",
+    "translation": "плавать",
+    "association": "Свинья плавает.",
+    "example": "I swim in the pool.",
+    "ipa": "/swɪm/"
+  },
+  {
+    "id": 170,
+    "word": "toy",
+    "translation": "игрушка",
+    "association": "У той девочки игрушка лучше.",
+    "example": "This toy is new.",
+    "ipa": "/tɔɪ/"
+  },
+  {
+    "id": 171,
+    "word": "bank account",
+    "translation": "банковский счет",
+    "association": "Аккаунт в банке.",
+    "example": "I have a bank account.",
+    "ipa": "/bæŋk əˈkaʊnt/"
+  },
+  {
+    "id": 172,
+    "word": "feed",
+    "translation": "кормить",
+    "association": "Федя кормит собаку.",
+    "example": "Feed the cat.",
+    "ipa": "/fiːd/"
+  },
+  {
+    "id": 173,
+    "word": "fix",
+    "translation": "чинить",
+    "association": "Фиксики чинят телефон.",
+    "example": "Fix the phone.",
+    "ipa": "/fɪks/"
+  },
+  {
+    "id": 174,
+    "word": "fridge",
+    "translation": "холодильник",
+    "association": "Картошка фри в холодильнике.",
+    "example": "Put it in the fridge.",
+    "ipa": "/frɪdʒ/"
+  },
+  {
+    "id": 175,
+    "word": "pen",
+    "translation": "ручка",
+    "association": "Питер Пен держит ручку.",
+    "example": "I write with a pen.",
+    "ipa": "/pen/"
+  },
+  {
+    "id": 176,
+    "word": "pencil",
+    "translation": "карандаш",
+    "association": "Пенсионер пишет карандашом.",
+    "example": "Use a pencil.",
+    "ipa": "/ˈpen.sɪl/"
+  },
+  {
+    "id": 177,
+    "word": "chair",
+    "translation": "стул",
+    "association": "На стуле червь (чэр).",
+    "example": "Sit on the chair.",
+    "ipa": "/tʃeər/"
+  },
+  {
+    "id": 178,
+    "word": "sofa",
+    "translation": "диван",
+    "association": "Сова на диване.",
+    "example": "The sofa is soft.",
+    "ipa": "/ˈsoʊ.fə/"
+  },
+  {
+    "id": 179,
+    "word": "room",
+    "translation": "комната",
+    "association": "В комнате бутылка рома.",
+    "example": "My room is clean.",
+    "ipa": "/ruːm/"
+  },
+  {
+    "id": 180,
+    "word": "cup",
+    "translation": "чашка",
+    "association": "С чашки капает вода.",
+    "example": "Take a cup of tea.",
+    "ipa": "/kʌp/"
+  },
+  {
+    "id": 181,
+    "word": "door",
+    "translation": "дверь",
+    "association": "Открываешь дверь - видишь дорогу.",
+    "example": "Open the door.",
+    "ipa": "/dɔːr/"
+  },
+  {
+    "id": 182,
+    "word": "yard",
+    "translation": "двор",
+    "association": "Во дворе пушечное ядро.",
+    "example": "Kids play in the yard.",
+    "ipa": "/jɑːrd/"
+  },
+  {
+    "id": 183,
+    "word": "bed",
+    "translation": "кровать",
+    "association": "Бедняга лежит на кровати.",
+    "example": "Go to bed.",
+    "ipa": "/bed/"
+  },
+  {
+    "id": 184,
+    "word": "bag",
+    "translation": "сумка",
+    "association": "В багажнике сумка.",
+    "example": "Take your bag.",
+    "ipa": "/bæɡ/"
+  },
+  {
+    "id": 185,
+    "word": "pool",
+    "translation": "бассейн",
+    "association": "Пуля лежит на дне бассейна.",
+    "example": "We swim in the pool.",
+    "ipa": "/puːl/"
+  },
+  {
+    "id": 186,
+    "word": "fence",
+    "translation": "забор",
+    "association": "На заборе висит фен.",
+    "example": "The fence is high.",
+    "ipa": "/fens/"
+  },
+  {
+    "id": 187,
+    "word": "smart",
+    "translation": "умный",
+    "association": "Смартфон — умный телефон.",
+    "example": "He is very smart.",
+    "ipa": "/smɑːrt/"
+  },
+  {
+    "id": 188,
+    "word": "big",
+    "translation": "большой",
+    "association": "Большой бегемот.",
+    "example": "This house is big.",
+    "ipa": "/bɪɡ/"
+  },
+  {
+    "id": 189,
+    "word": "small",
+    "translation": "маленький",
+    "association": "Маленькая девочка пробует смолу.",
+    "example": "The cat is small.",
+    "ipa": "/smɔːl/"
+  },
+  {
+    "id": 190,
+    "word": "window",
+    "translation": "окно",
+    "association": "Переустановил windows у окна.",
+    "example": "Open the window.",
+    "ipa": "/ˈwɪn.doʊ/"
+  },
+  {
+    "id": 191,
+    "word": "talk",
+    "translation": "говорить",
+    "association": "Поговорить с Толиком.",
+    "example": "Let’s talk.",
+    "ipa": "/tɔːk/"
+  },
+  {
+    "id": 192,
+    "word": "answer",
+    "translation": "отвечать",
+    "association": "Ансар ответит.",
+    "example": "Answer the question.",
+    "ipa": "/ˈæn.sər/"
+  },
+  {
+    "id": 193,
+    "word": "spirit",
+    "translation": "дух",
+    "association": "Дух требует спирта.",
+    "example": "The spirit of the team is strong.",
+    "ipa": "/ˈspɪr.ɪt/"
+  },
+  {
+    "id": 194,
+    "word": "travel",
+    "translation": "путешествовать",
+    "association": "Путешествовать на трамвае.",
+    "example": "I like to travel.",
+    "ipa": "/ˈtræv.əl/"
+  },
+  {
+    "id": 195,
+    "word": "describe",
+    "translation": "описывать",
+    "association": "Описывать диск ребят.",
+    "example": "Describe this picture.",
+    "ipa": "/dɪˈskraɪb/"
+  },
+  {
+    "id": 196,
+    "word": "stop",
+    "translation": "остановить, остановиться",
+    "association": "Стоп, остановись.",
+    "example": "Stop the car.",
+    "ipa": "/stɒp/"
+  },
+  {
+    "id": 197,
+    "word": "fly",
+    "translation": "летать",
+    "association": "Фломастер летает.",
+    "example": "Birds can fly.",
+    "ipa": "/flaɪ/"
+  },
+  {
+    "id": 198,
+    "word": "now",
+    "translation": "сейчас",
+    "association": "Но сейчас все по-другому.",
+    "example": "Do it now.",
+    "ipa": "/naʊ/"
+  },
+  {
+    "id": 199,
+    "word": "run",
+    "translation": "бежать",
+    "association": "Бегать рано утром.",
+    "example": "I run every day.",
+    "ipa": "/rʌn/"
+  },
+  {
+    "id": 200,
+    "word": "get",
+    "translation": "получить",
+    "association": "Получил во Франции багет.",
+    "example": "I get your message.",
+    "ipa": "/ɡet/"
+  },
+  {
+    "id": 201,
+    "word": "come back",
+    "translation": "вернуться",
+    "association": "Я зову собаку, чтобы вернулся: ко мне, Бэк.",
+    "example": "Come back home.",
+    "ipa": "/kʌm bæk/"
+  },
+  {
+    "id": 202,
+    "word": "earn",
+    "translation": "зарабатывать",
+    "association": "Заработал орден.",
+    "example": "He earns money.",
+    "ipa": "/ɜːrn/"
+  },
+  {
+    "id": 203,
+    "word": "again",
+    "translation": "снова",
+    "association": "Снова пришел Гена.",
+    "example": "Try again.",
+    "ipa": "/əˈɡen/"
+  },
+  {
+    "id": 204,
+    "word": "become",
+    "translation": "становиться",
+    "association": "Стать жирным как бекон.",
+    "example": "He wants to become a doctor.",
+    "ipa": "/bɪˈkʌm/"
+  },
+  {
+    "id": 205,
+    "word": "flat",
+    "translation": "квартира",
+    "association": "Флаг в квартире.",
+    "example": "I live in a flat.",
+    "ipa": "/flæt/"
+  },
+  {
+    "id": 206,
+    "word": "best",
+    "translation": "лучший",
+    "association": "best friend - лучший друг.",
+    "example": "This is the best choice.",
+    "ipa": "/best/"
+  },
+  {
+    "id": 207,
+    "word": "Ship",
+    "translation": "корабль",
+    "association": "Корабль перевозит шипы.",
+    "example": "The ship sails on the sea.",
+    "ipa": "/ʃɪp/"
+  },
+  {
+    "id": 208,
+    "word": "advantage",
+    "translation": "преимущество",
+    "association": "Сильный адвокат - это преимущество в суде.",
+    "example": "This gives us an advantage.",
+    "ipa": "/ədˈvæn.t̬ɪdʒ/"
+  },
+  {
+    "id": 209,
+    "word": "benefit",
+    "translation": "выгода, польза",
+    "association": "Бен и фитнесс-зал заключили выгодную сделку с пользой обеим.",
+    "example": "This has many benefits.",
+    "ipa": "/ˈben.ə.fɪt/"
+  },
+  {
+    "id": 210,
+    "word": "curious",
+    "translation": "любопытный",
+    "association": "Я попал в курьезную ситуацию из-за своего любопытства.",
+    "example": "He is very curious.",
+    "ipa": "/ˈkjʊr.i.əs/"
+  },
+  {
+    "id": 211,
+    "word": "decision",
+    "translation": "решение",
+    "association": "Комикс ДиСи же читаем - это наше общее решение.",
+    "example": "It was a hard decision.",
+    "ipa": "/dɪˈsɪʒ.ən/"
+  },
+  {
+    "id": 212,
+    "word": "encourage",
+    "translation": "поддерживать",
+    "association": "Поддержка придаёт кураж.",
+    "example": "They encourage each other.",
+    "ipa": "/ɪnˈkɜː.rɪdʒ/"
+  },
+  {
+    "id": 213,
+    "word": "improve",
+    "translation": "улучшать",
+    "association": "Им пруф нужен, чтобы улучшить все.",
+    "example": "I want to improve my skills.",
+    "ipa": "/ɪmˈpruːv/"
+  },
+  {
+    "id": 214,
+    "word": "intelligent",
+    "translation": "умный",
+    "association": "Я интеллигент, потому что умный и сообразительный.",
+    "example": "She is very intelligent.",
+    "ipa": "/ɪnˈtel.ə.dʒənt/"
+  },
+  {
+    "id": 215,
+    "word": "necessary",
+    "translation": "необходимый",
+    "association": "Несу сари, необходимый для индианки.",
+    "example": "This step is necessary.",
+    "ipa": "/ˈnes.ə.ser.i/"
+  },
+  {
+    "id": 216,
+    "word": "pressure",
+    "translation": "давление",
+    "association": "Качаю пресс с утра, чтобы выдерживать давление в животе.",
+    "example": "He feels a lot of pressure.",
+    "ipa": "/ˈpreʃ.ɚ/"
+  },
+  {
+    "id": 217,
+    "word": "pleasure",
+    "translation": "удовольствие",
+    "association": "Удовольствие от пляжа.",
+    "example": "It was a pleasure to meet you.",
+    "ipa": "/ˈpleʒ.ɚ/"
+  },
+  {
+    "id": 218,
+    "word": "suggest",
+    "translation": "предлагать",
+    "association": "Сценарист предлагает свой сюжет режиссеру.",
+    "example": "I suggest a new plan.",
+    "ipa": "/səˈdʒest/"
+  },
+  {
+    "id": 219,
+    "word": "magnificent",
+    "translation": "великолепный",
+    "association": "Малифисента — великолепный фильм.",
+    "example": "The view is magnificent.",
+    "ipa": "/mæɡˈnɪf.ɪ.sənt/"
+  },
+  {
+    "id": 220,
+    "word": "consequence",
+    "translation": "последствие",
+    "association": "Конь в последовательности - вот последствие",
+    "example": "Every action has a consequence.",
+    "ipa": "/ˈkɑːn.sə.kwens/"
+  },
+  {
+    "id": 221,
+    "word": "shall",
+    "translation": "должен",
+    "association": "Я должен посмотреть сериал «Детство Шелдона».",
+    "example": "I shall return.",
+    "ipa": "/ʃæl/"
+  },
+  {
+    "id": 222,
+    "word": "thought",
+    "translation": "мысль",
+    "association": "Мои мысли о трёхсотке.",
+    "example": "That is a good thought.",
+    "ipa": "/θɔːt/"
+  },
+  {
+    "id": 223,
+    "word": "tame",
+    "translation": "приручённый",
+    "association": "Тёме подарили приручённого зверька.",
+    "example": "The animal is tame.",
+    "ipa": "/teɪm/"
+  },
+  {
+    "id": 224,
+    "word": "gaze",
+    "translation": "взор",
+    "association": "Пристально смотрели за бьющим фонтаном гейзера.",
+    "example": "She fixed her gaze on him.",
+    "ipa": "/ɡeɪz/"
+  },
+  {
+    "id": 225,
+    "word": "things",
+    "translation": "вещи",
+    "association": "Смотрю сериал «Stranger Things» и сортирую вещи.",
+    "example": "I have many things to do.",
+    "ipa": "/θɪŋz/"
+  },
+  {
+    "id": 226,
+    "word": "Despite",
+    "translation": "несмотря на",
+    "association": "Да, спит он несмотря на всё",
+    "example": "Despite the rain, we went for a walk.",
+    "ipa": "/dɪˈspaɪt/"
+  },
+  {
+    "id": 227,
+    "word": "Nevertheless",
+    "translation": "тем не менее",
+    "association": "Тем не менее повернули в неверный лес",
+    "example": "It was raining. Nevertheless, we went out.",
+    "ipa": "/ˌnevərðəˈles/"
+  },
+  {
+    "id": 228,
+    "word": "Feasible",
+    "translation": "осуществимый",
+    "association": "Осуществим в вестибюле встречу",
+    "example": "Is it feasible to finish today?",
+    "ipa": "/ˈfiːzəbl/"
+  },
+  {
+    "id": 229,
+    "word": "leverage",
+    "translation": "рычаг",
+    "association": "Тянет лев рычаг",
+    "example": "He used his skills as leverage.",
+    "ipa": "/ˈlevərɪdʒ/"
+  },
+  {
+    "id": 230,
+    "word": "change",
+    "translation": "менять",
+    "association": "Чары меняют всё вокруг",
+    "example": "I need to change my clothes.",
+    "ipa": "/tʃeɪndʒ/"
+  },
+  {
+    "id": 231,
+    "word": "decide",
+    "translation": "решать",
+    "association": "Десятка сидит и выбирает, что делать",
+    "example": "I can't decide what to eat.",
+    "ipa": "/dɪˈsaɪd/"
+  },
+  {
+    "id": 232,
+    "word": "certain",
+    "translation": "определённый",
+    "association": "Сэр танцует определённый танец. Получил определённую дозу серотонина",
+    "example": "I'm certain he is right.",
+    "ipa": "/ˈsɜːrtn/"
+  },
+  {
+    "id": 233,
+    "word": "certainly",
+    "translation": "безусловно",
+    "association": "Сэр танцует ли? Безусловно, да!",
+    "example": "She certainly knows the answer.",
+    "ipa": "/ˈsɜːrtnli/"
+  },
+  {
+    "id": 234,
+    "word": "between",
+    "translation": "между",
+    "association": "Битва вин между сомелье",
+    "example": "I sat between Tom and Jerry.",
+    "ipa": "/bɪˈtwiːn/"
+  },
+  {
+    "id": 235,
+    "word": "Among",
+    "translation": "среди",
+    "association": "Игра Among Us переводится как «Среди нас»",
+    "example": "She is popular among her friends.",
+    "ipa": "/əˈmʌŋ/"
+  },
+  {
+    "id": 236,
+    "word": "Awkward",
+    "translation": "неловкий",
+    "association": "О, квак! Неловко получилось",
+    "example": "There was an awkward silence.",
+    "ipa": "/ˈɔːkwərd/"
+  },
+  {
+    "id": 237,
+    "word": "condition",
+    "translation": "состояние",
+    "association": "Кон дишн — кондиционер меняет состояние воздуха",
+    "example": "My car is in good condition.",
+    "ipa": "/kənˈdɪʃn/"
+  },
+  {
+    "id": 238,
+    "word": "Adore",
+    "translation": "обожать",
+    "association": "Обожаю, когда дорога пустая",
+    "example": "I adore chocolate cake.",
+    "ipa": "/əˈdɔːr/"
+  },
+  {
+    "id": 239,
+    "word": "climb",
+    "translation": "карабкаться",
+    "association": "Клеем альпинист карабкается вверх",
+    "example": "We plan to climb the mountain.",
+    "ipa": "/klaɪm/"
+  },
+  {
+    "id": 240,
+    "word": "jealous",
+    "translation": "ревнивый",
+    "association": "Джей Ло ревнует мужа",
+    "example": "Don't be jealous of her success.",
+    "ipa": "/ˈdʒeləs/"
+  },
+  {
+    "id": 241,
+    "word": "afford",
+    "translation": "позволить себе",
+    "association": "А Форд могу себе позволить",
+    "example": "I can't afford a new phone.",
+    "ipa": "/əˈfɔːrd/"
+  }
+]
