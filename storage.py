@@ -19,7 +19,9 @@ from db import (
     get_error_history, get_most_problematic_words, check_and_award_achievements, 
     get_achievements,
     # Функция для отслеживания изменений файла
-    check_words_json_updated
+    check_words_json_updated,
+    # Функции для работы с уровнем пользователя
+    get_user_level, set_user_level
 )
 
 logging.basicConfig(level=logging.INFO)

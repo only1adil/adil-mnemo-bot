@@ -40,7 +40,8 @@ def init_db() -> None:
             registered_at TEXT DEFAULT CURRENT_TIMESTAMP,
             last_activity TEXT,
             current_error_streak INTEGER DEFAULT 0,
-            longest_error_streak INTEGER DEFAULT 0
+            longest_error_streak INTEGER DEFAULT 0,
+            current_level TEXT DEFAULT 'A1'
         )
     """)
     
@@ -53,6 +54,7 @@ def init_db() -> None:
             association TEXT,
             example TEXT,
             ipa TEXT,
+            level TEXT DEFAULT 'A1',
             created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
@@ -181,14 +183,15 @@ def sync_words_from_json() -> None:
             
             try:
                 cursor.execute("""
-                    INSERT INTO words (word, translation, association, example, ipa)
-                    VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO words (word, translation, association, example, ipa, level)
+                    VALUES (?, ?, ?, ?, ?, ?)
                 """, (
                     word_text,
                     word.get('translation', ''),
                     word.get('association', ''),
                     word.get('example', ''),
-                    word.get('ipa', '')
+                    word.get('ipa', ''),
+                    word.get('level', 'A1')
                 ))
                 added_count += 1
             except sqlite3.IntegrityError:
@@ -284,20 +287,20 @@ def update_user_activity(user_id: int) -> None:
 
 # ==================== РАБОТА СО СЛОВАМИ ====================
 
-def add_word(word: str, translation: str, association: str = "", example: str = "", ipa: str = "") -> int:
+def add_word(word: str, translation: str, association: str = "", example: str = "", ipa: str = "", level: str = "A1") -> int:
     """Добавляет новое слово в БД, возвращает ID слова"""
     conn = get_connection()
     cursor = conn.cursor()
     
     try:
         cursor.execute("""
-            INSERT INTO words (word, translation, association, example, ipa)
-            VALUES (?, ?, ?, ?, ?)
-        """, (word, translation, association, example, ipa))
+            INSERT INTO words (word, translation, association, example, ipa, level)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (word, translation, association, example, ipa, level))
         
         conn.commit()
         word_id = cursor.lastrowid
-        logging.info(f"✅ Добавлено слово '{word}' с ID {word_id}")
+        logging.info(f"✅ Добавлено слово '{word}' ({level}) с ID {word_id}")
         return word_id
     except sqlite3.IntegrityError:
         logging.warning(f"⚠️ Слово '{word}' уже существует")
@@ -325,7 +328,8 @@ def get_word_by_id(word_id: int) -> Optional[Dict]:
                 'translation': row['translation'],
                 'association': row['association'],
                 'example': row['example'],
-                'ipa': row['ipa']
+                'ipa': row['ipa'],
+                'level': row['level']
             }
         return None
     finally:
@@ -693,6 +697,49 @@ def update_user_error_streak(user_id: int, streak: int = 0) -> None:
         conn.close()
 
 
+# ==================== РАБОТА С УРОВНЕМ ПОЛЬЗОВАТЕЛЯ ====================
+
+def get_user_level(user_id: int) -> str:
+    """Получает текущий уровень пользователя (A1, A2, B1, B2)"""
+    register_user(user_id)
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("SELECT current_level FROM users WHERE user_id = ?", (user_id,))
+        row = cursor.fetchone()
+        
+        if row and row['current_level']:
+            return row['current_level']
+        return 'A1'  # Уровень по умолчанию
+    finally:
+        conn.close()
+
+
+def set_user_level(user_id: int, level: str) -> None:
+    """Устанавливает уровень пользователя"""
+    register_user(user_id)
+    
+    # Проверяем валидность уровня
+    if level not in ['A1', 'A2', 'B1', 'B2']:
+        logging.warning(f"⚠️ Недопустимый уровень '{level}', установка A1")
+        level = 'A1'
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("""
+            UPDATE users SET current_level = ? WHERE user_id = ?
+        """, (level, user_id))
+        
+        conn.commit()
+        logging.info(f"✅ Пользователь {user_id} установил уровень {level}")
+    finally:
+        conn.close()
+
+
 # ==================== РАБОТА С ЛОГАМИ И СТАТИСТИКОЙ ====================
 
 def log_session(user_id: int, session_data: Dict) -> None:
@@ -977,12 +1024,17 @@ def get_student_progress(user_id: int) -> Dict:
 # ==================== РАБОТА С ВЫБОРОМ СЛОВ ====================
 
 def get_words_for_session(user_id: int, words_per_session: int = 10, 
-                         max_new_words: int = 5, max_review_words: int = 20) -> List[Dict]:
+                         max_new_words: int = 5, max_review_words: int = 20, level: str = None) -> List[Dict]:
     """
     Получает слова для сеанса обучения.
     Сначала возвращает слова на повторение, потом новые слова.
+    Если level не указан, берется из профиля пользователя.
     """
     register_user(user_id)
+    
+    # Если уровень не указан, получаем из профиля пользователя
+    if level is None:
+        level = get_user_level(user_id)
     
     conn = get_connection()
     cursor = conn.cursor()
@@ -998,9 +1050,10 @@ def get_words_for_session(user_id: int, words_per_session: int = 10,
                 AND up.next_review IS NOT NULL
                 AND datetime(up.next_review) <= datetime('now')
                 AND up.attempt_count < 4
+                AND w.level = ?
             ORDER BY up.next_review ASC
             LIMIT ?
-        """, (user_id, max_review_words))
+        """, (user_id, level, max_review_words))
         
         review_words = cursor.fetchall()
         session_words.extend([dict(row) for row in review_words])
@@ -1017,9 +1070,10 @@ def get_words_for_session(user_id: int, words_per_session: int = 10,
                 WHERE w.id NOT IN (
                     SELECT word_id FROM user_progress WHERE user_id = ?
                 )
+                AND w.level = ?
                 ORDER BY w.id
                 LIMIT ?
-            """, (user_id, needed))
+            """, (user_id, level, needed))
             
             new_words = cursor.fetchall()
             session_words.extend([dict(row) for row in new_words])

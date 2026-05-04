@@ -58,7 +58,9 @@ from storage import (
     # Функции для команд пользователя
     get_student_progress, get_most_problematic_words,
     # Функция для отслеживания изменений файла
-    check_words_json_updated
+    check_words_json_updated,
+    # Функции для работы с уровнем пользователя
+    get_user_level, set_user_level
 )
 from learning import (
     get_words_for_session,
@@ -92,6 +94,7 @@ scheduler = AsyncIOScheduler()
 class LearningState(StatesGroup):
     learning_mode = State()      # Режим обучения: показываем слово и кнопки
     recall_input = State()        # Ввод ответа в режиме recall
+    choosing_level = State()      # Выбор уровня сложности
 
 
 # Хранилище текущей сессии пользователя
@@ -142,7 +145,7 @@ def get_main_keyboard():
         keyboard=[
             [KeyboardButton(text="📚 Учить слова")],
             [KeyboardButton(text="📊 Мой прогресс")],
-            [KeyboardButton(text="ℹ️ О боте")]
+            [KeyboardButton(text="⚙️ Уровень"), KeyboardButton(text="ℹ️ О боте")]
         ],
         resize_keyboard=True
     )
@@ -160,22 +163,41 @@ async def register_user(user_id: int):
 
 
 @dp.message(Command("start"))
-async def cmd_start(message: types.Message):
+async def cmd_start(message: types.Message, state: FSMContext):
     """Обработчик команды /start"""
     user_id = message.from_user.id
     logging.info(f"Пользователь {user_id}: выполнена команда /start")
     
     await register_user(user_id)
     
+    # Получаем текущий уровень пользователя
+    current_level = get_user_level(user_id)
+    
     welcome_text = (
         "👋 Добро пожаловать в Mneme - бот для изучения английских слов!\n\n"
-        "🧠 Метод: Спaced Repetition (интервальное повторение)\n"
+        "🧠 Метод: Spaced Repetition (интервальное повторение)\n"
         f"📚 Всего слов: {get_total_words()}\n"
         f"📖 На повторение: {get_words_to_review(user_id)}\n\n"
-        "Используйте кнопки ниже для навигации."
+        f"📊 <b>Ваш уровень: {current_level}</b>\n\n"
+        "Хотите изменить уровень сложности?"
     )
     
-    await message.answer(welcome_text, reply_markup=get_main_keyboard())
+    # Создаем инлайн-клавиатуру для выбора уровня
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="🟢 A1 (Beginner)", callback_data="level_A1"),
+            InlineKeyboardButton(text="🟡 A2 (Elementary)", callback_data="level_A2"),
+        ],
+        [
+            InlineKeyboardButton(text="🟠 B1 (Intermediate)", callback_data="level_B1"),
+            InlineKeyboardButton(text="🔴 B2 (Upper-Int)", callback_data="level_B2"),
+        ],
+        [
+            InlineKeyboardButton(text="✅ Продолжить", callback_data="continue_to_main"),
+        ]
+    ])
+    
+    await message.answer(welcome_text, reply_markup=keyboard, parse_mode="HTML")
 
 
 @dp.message(F.text == "📚 Учить слова")
@@ -220,7 +242,8 @@ async def start_learning(message: types.Message, state: FSMContext):
                 return
         
         # Нет сохраненного сеанса - создаем новый
-        words = get_words_for_session(user_id, words_per_session=10)
+        user_level = get_user_level(user_id)  # Получаем уровень пользователя
+        words = get_words_for_session(user_id, words_per_session=10, level=user_level)
         
         if not words:
             logging.info(f"Пользователь {user_id}: нет слов для повторения")
@@ -433,6 +456,39 @@ async def finish_session(message: types.Message, state: FSMContext, user_id: int
     delete_session(user_id)
     
     await state.clear()
+
+
+# ==================== ОБРАБОТЧИКИ ВЫБОРА УРОВНЯ ====================
+
+@dp.callback_query(F.data.startswith("level_"))
+async def handle_level_selection(query: types.CallbackQuery, state: FSMContext):
+    """Обработка выбора уровня сложности"""
+    user_id = query.from_user.id
+    level = query.data.replace("level_", "")  # Извлекаем уровень (A1, A2, B1, B2)
+    
+    # Сохраняем уровень пользователя
+    set_user_level(user_id, level)
+    
+    level_names = {
+        'A1': '🟢 A1 (Beginner) - Начинающий',
+        'A2': '🟡 A2 (Elementary) - Элементарный',
+        'B1': '🟠 B1 (Intermediate) - Средний',
+        'B2': '🔴 B2 (Upper-Intermediate) - Выше среднего'
+    }
+    
+    response_text = f"✅ <b>Уровень изменен!</b>\n\nТеперь вы учите: {level_names.get(level, level)}\n\n💡 Слова будут отобраны соответствующего уровня сложности."
+    
+    await query.answer("✅ Уровень выбран!", show_alert=True)
+    await query.message.edit_text(response_text, parse_mode="HTML", reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="✅ Продолжить", callback_data="continue_to_main")]
+    ]))
+    
+
+@dp.callback_query(F.data == "continue_to_main")
+async def handle_continue_to_main(query: types.CallbackQuery, state: FSMContext):
+    """Переход в главное меню"""
+    await query.answer()
+    await query.message.edit_text("👋 Выберите действие:", reply_markup=get_main_keyboard())
 
 
 # Обработчики для продолжения/нового сеанса
@@ -788,6 +844,35 @@ async def handle_recall_answer(message: types.Message, state: FSMContext):
     else:
         await finish_session(message, state, user_id)
 
+
+
+@dp.message(F.text == "⚙️ Уровень")
+async def change_level(message: types.Message):
+    """Изменить уровень сложности"""
+    user_id = message.from_user.id
+    current_level = get_user_level(user_id)
+    
+    level_names = {
+        'A1': '🟢 A1 (Beginner) - Начинающий',
+        'A2': '🟡 A2 (Elementary) - Элементарный',
+        'B1': '🟠 B1 (Intermediate) - Средний',
+        'B2': '🔴 B2 (Upper-Intermediate) - Выше среднего'
+    }
+    
+    text = f"📊 <b>Выбор уровня сложности</b>\n\nТекущий уровень: <b>{level_names.get(current_level, current_level)}</b>\n\nВыберите новый уровень:"
+    
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="🟢 A1 (Beginner)", callback_data="level_A1"),
+            InlineKeyboardButton(text="🟡 A2 (Elementary)", callback_data="level_A2"),
+        ],
+        [
+            InlineKeyboardButton(text="🟠 B1 (Intermediate)", callback_data="level_B1"),
+            InlineKeyboardButton(text="🔴 B2 (Upper-Int)", callback_data="level_B2"),
+        ],
+    ])
+    
+    await message.answer(text, reply_markup=keyboard, parse_mode="HTML")
 
 
 @dp.message(F.text == "📊 Мой прогресс")

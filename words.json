@@ -1,11 +1,12 @@
 [
-{
+  {
     "id": 1,
     "word": "delicate",
     "translation": "деликатный, хрупкий",
     "association": "Хрупкий предмет и деликатная ситуация.",
     "example": "The delicate flowers need careful handling.",
-    "ipa": "/ˈdel.ɪ.kət/"
+    "ipa": "/ˈdel.ɪ.kət/",
+    "level": "B1"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "translation": "слон",
     "association": "Еле фанту выпил катаясь на слоне.",
     "example": "The elephant is the largest land animal.",
-    "ipa": "/ˈel.ɪ.fənt/"
+    "ipa": "/ˈel.ɪ.fənt/",
+    "level": "A1"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "translation": "благодарный",
     "association": "Я благодарен, что обошлось без града, фух",
     "example": "I am grateful for your help and support.",
-    "ipa": "/ˈɡreɪt.fəl/"
+    "ipa": "/ˈɡreɪt.fəl/",
+    "level": "B1"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "translation": "горизонт",
     "association": "Моя любимая горизонтальная игра - Forza Horizon 5.",
     "example": "The sun disappeared below the horizon.",
-    "ipa": "/həˈraɪ.zən/"
+    "ipa": "/həˈraɪ.zən/",
+    "level": "B1"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "translation": "невидимый",
     "association": "Невидимый человек оставил визитку.",
     "example": "The wind is invisible but we can feel it.",
-    "ipa": "/ɪnˈvɪz.ɪ.bəl/"
+    "ipa": "/ɪnˈvɪz.ɪ.bəl/",
+    "level": "B1"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "translation": "путешествие, поездка",
     "association": "Взять журнал в долгое путешествие",
     "example": "Our journey to Paris was unforgettable.",
-    "ipa": "`/ˈdʒɜː.ni/`"
+    "ipa": "`/ˈdʒɜː.ni/`",
+    "level": "B1"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "translation": "рвение, усердие",
     "association": "Дед с таким рвением катал нас на своем Зил.",
     "example": "She approached every task with great zeal.",
-    "ipa": "/ziːl/"
+    "ipa": "/ziːl/",
+    "level": "B2"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "translation": "свет",
     "association": "Всю ночь без света играл в лайт-версию игры.",
     "example": "The light is too bright in here.",
-    "ipa": "/laɪt/"
+    "ipa": "/laɪt/",
+    "level": "A1"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "translation": "гора",
     "association": "Пью маунтин-дью, чтобы взобраться на эту гору.",
     "example": "They climbed the mountain together.",
-    "ipa": "/ˈmaʊn.tɪn/"
+    "ipa": "/ˈmaʊn.tɪn/",
+    "level": "A1"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "translation": "природа",
     "association": "Натура человека - это его природа.",
     "example": "We should protect nature.",
-    "ipa": "/ˈneɪ.tʃər/"
+    "ipa": "/ˈneɪ.tʃər/",
+    "level": "A2"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "translation": "сила, мощь",
     "association": "Мы в детстве смотрели сериал \"Пауэр Рейнджеры\", где главные герои были наделены силой и мощью.",
     "example": "Knowledge is power.",
-    "ipa": "/ˈpaʊ.ər/"
+    "ipa": "/ˈpaʊ.ər/",
+    "level": "A1"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "translation": "уважение",
     "association": "Я уважаю тебя и поэтому выражаю свой респект.",
     "example": "You should respect your parents.",
-    "ipa": "/rɪˈspekt/"
+    "ipa": "/rɪˈspekt/",
+    "level": "A2"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "translation": "доверие",
     "association": "Траст фонд - это когда доверяешь человеку свои активы.",
     "example": "Trust is important in relationships.",
-    "ipa": "/trʌst/"
+    "ipa": "/trʌst/",
+    "level": "A2"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "translation": "победа",
     "association": "Виктория победительница.",
     "example": "The team celebrated their victory.",
-    "ipa": "/ˈvɪk.tər.i/"
+    "ipa": "/ˈvɪk.tər.i/",
+    "level": "B1"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "translation": "мудрость",
     "association": "Весь его дом наполнен мудростью.",
     "example": "Wisdom comes with experience.",
-    "ipa": "/ˈwɪz.dəm/"
+    "ipa": "/ˈwɪz.dəm/",
+    "level": "B1"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "translation": "смелый",
     "association": "Я становлюсь смелым, когда рублю бревно",
     "example": "The brave soldier saved lives.",
-    "ipa": "/breɪv/"
+    "ipa": "/breɪv/",
+    "level": "A2"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "translation": "фокус, концентрация",
     "association": "Чтобы выполнить фокус, нужно сконцентрироваться.",
     "example": "Focus on your goals.",
-    "ipa": "/ˈfoʊ.kəs/"
+    "ipa": "/ˈfoʊ.kəs/",
+    "level": "A2"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "translation": "привычка",
     "association": "Хабит Бильбо Беггинс имеет привычку вкусно поесть.",
     "example": "Reading is a good habit.",
-    "ipa": "/ˈhæb.ɪt/"
+    "ipa": "/ˈhæb.ɪt/",
+    "level": "A2"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "translation": "радость",
     "association": "Просмотр фильма Джой доставило мне радость и удовольствие.",
     "example": "She felt pure joy.",
-    "ipa": "/dʒɔɪ/"
+    "ipa": "/dʒɔɪ/",
+    "level": "A1"
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "translation": "учить",
     "association": "Лер научи нас чему-то новому.",
     "example": "I want to learn English.",
-    "ipa": "/lɜːrn/"
+    "ipa": "/lɜːrn/",
+    "level": "A1"
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "translation": "быстрый",
     "association": "Жаба прыгает быстро издавая звук квик-квак.",
     "example": "He is very quick.",
-    "ipa": "/kwɪk/"
+    "ipa": "/kwɪk/",
+    "level": "A1"
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "translation": "сильный",
     "association": "У Нила Армстронга - сильная рука.",
     "example": "He is physically strong.",
-    "ipa": "/strɒŋ/"
+    "ipa": "/strɒŋ/",
+    "level": "A2"
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "translation": "время",
     "association": "Время прочитать журнал Тайм",
     "example": "Time is valuable.",
-    "ipa": "/taɪm/"
+    "ipa": "/taɪm/",
+    "level": "A1"
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "translation": "использовать",
     "association": "Юзер использует приложение.",
     "example": "Use this tool wisely.",
-    "ipa": "/juːz/"
+    "ipa": "/juːz/",
+    "level": "A1"
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "translation": "особенность",
     "association": "Мы смотрели шоу икс-фактор про особенности выступающего человека.",
     "example": "She has the X-factor.",
-    "ipa": "/ˈeks.fæk.tər/"
+    "ipa": "/ˈeks.fæk.tər/",
+    "level": "B2"
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "translation": "молодой",
     "association": "Молодой китаец Янг.",
     "example": "He is still very young.",
-    "ipa": "/jʌŋ/"
+    "ipa": "/jʌŋ/",
+    "level": "A1"
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "translation": "расслабиться",
     "association": "Лёд и чечил — это расслабление.",
     "example": "I am just going to stay home and chill this weekend.",
-    "ipa": "/tʃɪl/"
+    "ipa": "/tʃɪl/",
+    "level": "A1"
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "translation": "осмелиться",
     "association": "Если осмелишься, то давай, дерзай (dare)!",
     "example": "I dare you to try it.",
-    "ipa": "/deər/"
+    "ipa": "/deər/",
+    "level": "A2"
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "translation": "хватать",
     "association": "Схватить грабителя.",
     "example": "He tried to grab the bag.",
-    "ipa": "/ɡræb/"
+    "ipa": "/ɡræb/",
+    "level": "A1"
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "translation": "беспорядок",
     "association": "Месси устроил беспорядок.",
     "example": "Your room is a mess.",
-    "ipa": "/mes/"
+    "ipa": "/mes/",
+    "level": "A1"
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "translation": "нерв",
     "association": "Нервы как нерв оголённый.",
     "example": "This noise gets on my nerves.",
-    "ipa": "/nɜːrv/"
+    "ipa": "/nɜːrv/",
+    "level": "A2"
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@
     "translation": "наливать",
     "association": "Если наливать теплую воду на кожу, то расширяются поры.",
     "example": "She poured some tea into the cup.",
-    "ipa": "/pɔːr/"
+    "ipa": "/pɔːr/",
+    "level": "A1"
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@
     "translation": "бросать",
     "association": "Я к Вите бросил мяч.",
     "example": "He decided to quit his job.",
-    "ipa": "/kwɪt/"
+    "ipa": "/kwɪt/",
+    "level": "A2"
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@
     "translation": "вид",
     "association": "Во время интервью вид у меня должен быть шикарным.",
     "example": "The view from the window is amazing.",
-    "ipa": "/vjuː/"
+    "ipa": "/vjuː/",
+    "level": "B1"
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@
     "translation": "зона",
     "association": "Зона - не тюрьма, а просто зона.",
     "example": "This is a safe zone.",
-    "ipa": "/zoʊn/"
+    "ipa": "/zoʊn/",
+    "level": "A2"
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@
     "translation": "цель",
     "association": "Айм целиться эт ю.",
     "example": "He aimed at the target.",
-    "ipa": "/eɪm/"
+    "ipa": "/eɪm/",
+    "level": "A2"
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@
     "translation": "бить",
     "association": "Бить в барабан под бит.",
     "example": "He can beat anyone in the game.",
-    "ipa": "/biːt/"
+    "ipa": "/biːt/",
+    "level": "B1"
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@
     "translation": "спокойствие",
     "association": "Калмык спокойно пасёт коней",
     "example": "Stay calm under pressure.",
-    "ipa": "/kɑːm/"
+    "ipa": "/kɑːm/",
+    "level": "B1"
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@
     "translation": "охотиться",
     "association": "Хедхантеры охотятся на специалистов.",
     "example": "They hunt in the forest.",
-    "ipa": "/hʌnt/"
+    "ipa": "/hʌnt/",
+    "level": "B1"
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@
     "translation": "шутка",
     "association": "Джокер шутит над Бэтменом.",
     "example": "He told a funny joke.",
-    "ipa": "/dʒoʊk/"
+    "ipa": "/dʒoʊk/",
+    "level": "A1"
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@
     "translation": "стучать",
     "association": "После нокаута стучат бойцу по лбу.",
     "example": "Please knock before entering.",
-    "ipa": "/nɑːk/"
+    "ipa": "/nɑːk/",
+    "level": "A2"
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@
     "translation": "двигаться",
     "association": "Корова кричит му в движении.",
     "example": "We need to move faster.",
-    "ipa": "/muːv/"
+    "ipa": "/muːv/",
+    "level": "A1"
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@
     "translation": "заметка",
     "association": "Записал заметку в ноут.",
     "example": "She wrote a note.",
-    "ipa": "/noʊt/"
+    "ipa": "/noʊt/",
+    "level": "A1"
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@
     "translation": "толкать",
     "association": "Толкать пушку.",
     "example": "Push the door to open it.",
-    "ipa": "/pʊʃ/"
+    "ipa": "/pʊʃ/",
+    "level": "A1"
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@
     "translation": "кусать",
     "association": "Тебя байтят в игре, а ты кусаешься.",
     "example": "The dog tried to bite me.",
-    "ipa": "/baɪt/"
+    "ipa": "/baɪt/",
+    "level": "A1"
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@
     "translation": "звонить",
     "association": "Колокол звонит.",
     "example": "I will call you later.",
-    "ipa": "/kɔːl/"
+    "ipa": "/kɔːl/",
+    "level": "A1"
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@
     "translation": "падать",
     "association": "Упал во время матча и дали фол.",
     "example": "Be careful not to fall.",
-    "ipa": "/fɔːl/"
+    "ipa": "/fɔːl/",
+    "level": "A1"
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@
     "translation": "ударить",
     "association": "Ударил музыканта, который написал хит.",
     "example": "He hit the ball hard.",
-    "ipa": "/hɪt/"
+    "ipa": "/hɪt/",
+    "level": "A1"
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@
     "translation": "смеяться",
     "association": "Хватит смеяться, лафа кончилась.",
     "example": "They laugh at the joke.",
-    "ipa": "/læf/"
+    "ipa": "/læf/",
+    "level": "A1"
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@
     "translation": "мешать",
     "association": "Диджей мешает мне миксовать треки.",
     "example": "Mix the ingredients well.",
-    "ipa": "/mɪks/"
+    "ipa": "/mɪks/",
+    "level": "A1"
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@
     "translation": "побеждать",
     "association": "Побеждать в дегустации вин",
     "example": "We want to win the game.",
-    "ipa": "/wɪn/"
+    "ipa": "/wɪn/",
+    "level": "A1"
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@
     "translation": "ломать",
     "association": "Сломал нос брейк-дансеру.",
     "example": "Be careful not to break it.",
-    "ipa": "/breɪk/"
+    "ipa": "/breɪk/",
+    "level": "A1"
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@
     "translation": "водить",
     "association": "Я вожу машину с легким драйвом.",
     "example": "He can drive a car.",
-    "ipa": "/draɪv/"
+    "ipa": "/draɪv/",
+    "level": "A1"
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@
     "translation": "смотреть",
     "association": "Смотрю на лук и плачу.",
     "example": "Look at the sky.",
-    "ipa": "/lʊk/"
+    "ipa": "/lʊk/",
+    "level": "A1"
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@
     "translation": "делать",
     "association": "Я умею делать мейк-ап.",
     "example": "I make coffee every morning.",
-    "ipa": "/meɪk/"
+    "ipa": "/meɪk/",
+    "level": "A1"
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@
     "translation": "тянуть",
     "association": "Дедпул тянет весь фильм.",
     "example": "Pull the door.",
-    "ipa": "/pʊl/"
+    "ipa": "/pʊl/",
+    "level": "A2"
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@
     "translation": "читать",
     "association": "Читаю Майн Рида.",
     "example": "I read books every day.",
-    "ipa": "/riːd/"
+    "ipa": "/riːd/",
+    "level": "A1"
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@
     "translation": "идти",
     "association": "Волк идёт.",
     "example": "We walk in the park.",
-    "ipa": "/wɔːk/"
+    "ipa": "/wɔːk/",
+    "level": "A1"
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@
     "translation": "строить",
     "association": "Бодибилдер строит тело.",
     "example": "They build a house.",
-    "ipa": "/bɪld/"
+    "ipa": "/bɪld/",
+    "level": "A1"
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@
     "translation": "ловить",
     "association": "Ловлю ртом кетчуп.",
     "example": "Catch the ball.",
-    "ipa": "/kætʃ/"
+    "ipa": "/kætʃ/",
+    "level": "A1"
   },
   {
     "id": 61,
@@ -485,7 +545,8 @@
     "translation": "проигрывать",
     "association": "Лузер снова проиграл.",
     "example": "We don’t want to lose.",
-    "ipa": "/luːz/"
+    "ipa": "/luːz/",
+    "level": "A1"
   },
   {
     "id": 62,
@@ -493,7 +554,8 @@
     "translation": "соглашаться",
     "association": "Ты агришься, но говоришь: ок, согласен.",
     "example": "I agree with you.",
-    "ipa": "/əˈɡriː/"
+    "ipa": "/əˈɡriː/",
+    "level": "A2"
   },
   {
     "id": 63,
@@ -501,7 +563,8 @@
     "translation": "разрешать",
     "association": "Алло, разрешите представиться.",
     "example": "They allow us to enter.",
-    "ipa": "/əˈlaʊ/"
+    "ipa": "/əˈlaʊ/",
+    "level": "A2"
   },
   {
     "id": 64,
@@ -509,7 +572,8 @@
     "translation": "сравнивать",
     "association": "Компы сравниваешь.",
     "example": "Compare these two options.",
-    "ipa": "/kəmˈpeər/"
+    "ipa": "/kəmˈpeər/",
+    "level": "A2"
   },
   {
     "id": 65,
@@ -517,7 +581,8 @@
     "translation": "готовить",
     "association": "Доктор Препэр готовит колу сам.",
     "example": "Prepare for the exam.",
-    "ipa": "/prɪˈpeər/"
+    "ipa": "/prɪˈpeər/",
+    "level": "A2"
   },
   {
     "id": 66,
@@ -525,7 +590,8 @@
     "translation": "казаться",
     "association": "В симсе кажется жизнь лучше.",
     "example": "It seems easy.",
-    "ipa": "/siːm/"
+    "ipa": "/siːm/",
+    "level": "A2"
   },
   {
     "id": 67,
@@ -533,7 +599,8 @@
     "translation": "учить",
     "association": "Лило учит Стича..",
     "example": "She teaches English.",
-    "ipa": "/tiːtʃ/"
+    "ipa": "/tiːtʃ/",
+    "level": "A2"
   },
   {
     "id": 68,
@@ -541,7 +608,8 @@
     "translation": "встречать",
     "association": "Митинг у нас в стране - это встреча с дубинкой.",
     "example": "Nice to meet you.",
-    "ipa": "/miːt/"
+    "ipa": "/miːt/",
+    "level": "A1"
   },
   {
     "id": 69,
@@ -549,7 +617,8 @@
     "translation": "спорить",
     "association": "Нужны аргументы, когда споришь.",
     "example": "They often argue.",
-    "ipa": "/ˈɑːr.ɡjuː/"
+    "ipa": "/ˈɑːr.ɡjuː/",
+    "level": "B1"
   },
   {
     "id": 70,
@@ -557,7 +626,8 @@
     "translation": "прибывать",
     "association": "Я прибываю в наслаждении с пиццей Аррива.",
     "example": "We arrive at 6 pm.",
-    "ipa": "/əˈraɪv/"
+    "ipa": "/əˈraɪv/",
+    "level": "B1"
   },
   {
     "id": 71,
@@ -565,7 +635,8 @@
     "translation": "атаковать",
     "association": "Паническая атака атакует меня.",
     "example": "The army will attack.",
-    "ipa": "/əˈtæk/"
+    "ipa": "/əˈtæk/",
+    "level": "B1"
   },
   {
     "id": 72,
@@ -573,7 +644,8 @@
     "translation": "нести",
     "association": "Несу индусу соус карри.",
     "example": "Carry this bag.",
-    "ipa": "/ˈkær.i/"
+    "ipa": "/ˈkær.i/",
+    "level": "A2"
   },
   {
     "id": 73,
@@ -581,7 +653,8 @@
     "translation": "вызывать",
     "association": "Пастух свистом вызывает коз.",
     "example": "This can cause problems.",
-    "ipa": "/kɔːz/"
+    "ipa": "/kɔːz/",
+    "level": "B1"
   },
   {
     "id": 74,
@@ -589,7 +662,8 @@
     "translation": "умирать",
     "association": "Дай умереть спокойно.",
     "example": "Plants die without water.",
-    "ipa": "/daɪ/"
+    "ipa": "/daɪ/",
+    "level": "A1"
   },
   {
     "id": 75,
@@ -597,7 +671,8 @@
     "translation": "чувствовать",
     "association": "Фил чувствует ритм.",
     "example": "I feel good today.",
-    "ipa": "/fiːl/"
+    "ipa": "/fiːl/",
+    "level": "A1"
   },
   {
     "id": 76,
@@ -605,7 +680,8 @@
     "translation": "заканчивать",
     "association": "Финиширую марафон и заканчиваю с бегом.",
     "example": "Finish your work.",
-    "ipa": "/ˈfɪn.ɪʃ/"
+    "ipa": "/ˈfɪn.ɪʃ/",
+    "level": "A2"
   },
   {
     "id": 77,
@@ -613,7 +689,8 @@
     "translation": "держать",
     "association": "Держу в руках билет на Кипр.",
     "example": "Keep going.",
-    "ipa": "/kiːp/"
+    "ipa": "/kiːp/",
+    "level": "A1"
   },
   {
     "id": 78,
@@ -621,7 +698,8 @@
     "translation": "уходить",
     "association": "После ливня ухожу.",
     "example": "I leave at 5 pm.",
-    "ipa": "/liːv/"
+    "ipa": "/liːv/",
+    "level": "A1"
   },
   {
     "id": 79,
@@ -629,7 +707,8 @@
     "translation": "позволять",
     "association": "Летчик позволяет сесть за штурвал.",
     "example": "Let me help you.",
-    "ipa": "/let/"
+    "ipa": "/let/",
+    "level": "A1"
   },
   {
     "id": 80,
@@ -637,7 +716,8 @@
     "translation": "нравиться",
     "association": "Поставлю лайк, потому что нравится.",
     "example": "I like this song.",
-    "ipa": "/laɪk/"
+    "ipa": "/laɪk/",
+    "level": "A1"
   },
   {
     "id": 81,
@@ -645,7 +725,8 @@
     "translation": "отправлять",
     "association": "Адам Сэндлер отправляет сообщение.",
     "example": "Send me a message.",
-    "ipa": "/send/"
+    "ipa": "/send/",
+    "level": "A2"
   },
   {
     "id": 82,
@@ -653,7 +734,8 @@
     "translation": "человек",
     "association": "Этот человек - важная персона.",
     "example": "He is a kind person.",
-    "ipa": "/ˈpɜːr.sən/"
+    "ipa": "/ˈpɜːr.sən/",
+    "level": "A1"
   },
   {
     "id": 83,
@@ -661,7 +743,8 @@
     "translation": "певец",
     "association": "Певец выступил в синем костюме.",
     "example": "The singer has a great voice.",
-    "ipa": "/ˈsɪŋ.ər/"
+    "ipa": "/ˈsɪŋ.ər/",
+    "level": "A1"
   },
   {
     "id": 84,
@@ -669,7 +752,8 @@
     "translation": "отдыхать",
     "association": "Отдыхать в ресторане.",
     "example": "I want to rest after work.",
-    "ipa": "/rest/"
+    "ipa": "/rest/",
+    "level": "A1"
   },
   {
     "id": 85,
@@ -677,7 +761,8 @@
     "translation": "продавать",
     "association": "Человек сел и начал продавать.",
     "example": "They sell fresh fruits.",
-    "ipa": "/sel/"
+    "ipa": "/sel/",
+    "level": "A2"
   },
   {
     "id": 86,
@@ -685,7 +770,8 @@
     "translation": "официант",
     "association": "Ветер сдул официанта.",
     "example": "The waiter brought the menu.",
-    "ipa": "/ˈweɪ.tər/"
+    "ipa": "/ˈweɪ.tər/",
+    "level": "A2"
   },
   {
     "id": 87,
@@ -693,7 +779,8 @@
     "translation": "ребенок",
     "association": "Ребенок пьет чай.",
     "example": "The child is playing.",
-    "ipa": "/tʃaɪld/"
+    "ipa": "/tʃaɪld/",
+    "level": "A1"
   },
   {
     "id": 88,
@@ -701,7 +788,8 @@
     "translation": "жена",
     "association": "Жена ловит Wi-Fi.",
     "example": "His wife is very kind.",
-    "ipa": "/waɪf/"
+    "ipa": "/waɪf/",
+    "level": "A1"
   },
   {
     "id": 89,
@@ -709,7 +797,8 @@
     "translation": "тяжелый",
     "association": "Хэви-метал - тяжелый металл.",
     "example": "This bag is very heavy.",
-    "ipa": "/ˈhev.i/"
+    "ipa": "/ˈhev.i/",
+    "level": "A2"
   },
   {
     "id": 90,
@@ -717,7 +806,8 @@
     "translation": "грустный",
     "association": "Грустный мужчина сидит в саду.",
     "example": "She feels sad today.",
-    "ipa": "/sæd/"
+    "ipa": "/sæd/",
+    "level": "A1"
   },
   {
     "id": 91,
@@ -725,7 +815,8 @@
     "translation": "покупать",
     "association": "Завтра пойдем покупать байк.",
     "example": "I want to buy a car.",
-    "ipa": "/baɪ/"
+    "ipa": "/baɪ/",
+    "level": "A1"
   },
   {
     "id": 92,
@@ -733,7 +824,8 @@
     "translation": "навещать",
     "association": "Навестил и оставил визитку.",
     "example": "I visit my friends often.",
-    "ipa": "/ˈvɪz.ɪt/"
+    "ipa": "/ˈvɪz.ɪt/",
+    "level": "A2"
   },
   {
     "id": 93,
@@ -741,7 +833,8 @@
     "translation": "водитель",
     "association": "Водитель настраивает драйвер.",
     "example": "The driver stopped the car.",
-    "ipa": "/ˈdraɪ.vər/"
+    "ipa": "/ˈdraɪ.vər/",
+    "level": "A2"
   },
   {
     "id": 94,
@@ -749,7 +842,8 @@
     "translation": "вкусный",
     "association": "У пиццы вкусное тесто.",
     "example": "This cake is very tasty.",
-    "ipa": "/ˈteɪs.ti/"
+    "ipa": "/ˈteɪs.ti/",
+    "level": "A1"
   },
   {
     "id": 95,
@@ -757,7 +851,8 @@
     "translation": "учиться",
     "association": "Студент учится, чтобы сдать экзамен.",
     "example": "I study every day.",
-    "ipa": "/ˈstʌd.i/"
+    "ipa": "/ˈstʌd.i/",
+    "level": "A1"
   },
   {
     "id": 96,
@@ -765,7 +860,8 @@
     "translation": "строитель",
     "association": "Бодибилдер является строителем своего тела.",
     "example": "The builder works hard.",
-    "ipa": "/ˈbɪl.dər/"
+    "ipa": "/ˈbɪl.dər/",
+    "level": "A2"
   },
   {
     "id": 97,
@@ -773,7 +869,8 @@
     "translation": "добрый",
     "association": "Добрый дядя дал киндер.",
     "example": "She is very kind.",
-    "ipa": "/kaɪnd/"
+    "ipa": "/kaɪnd/",
+    "level": "A1"
   },
   {
     "id": 98,
@@ -781,7 +878,8 @@
     "translation": "семья",
     "association": "У всех в семье одна фамилия.",
     "example": "I love my family.",
-    "ipa": "/ˈfæm.ɪ.li/"
+    "ipa": "/ˈfæm.ɪ.li/",
+    "level": "A1"
   },
   {
     "id": 99,
@@ -789,7 +887,8 @@
     "translation": "дворец",
     "association": "Палас во дворце.",
     "example": "The king lives in a palace.",
-    "ipa": "/ˈpæl.ɪs/"
+    "ipa": "/ˈpæl.ɪs/",
+    "level": "B1"
   },
   {
     "id": 100,
@@ -797,7 +896,8 @@
     "translation": "знать",
     "association": "Новые знания.",
     "example": "I know the answer.",
-    "ipa": "/noʊ/"
+    "ipa": "/noʊ/",
+    "level": "A1"
   },
   {
     "id": 101,
@@ -805,7 +905,8 @@
     "translation": "спрашивать",
     "association": "Спросить у Аскара.",
     "example": "Ask your question.",
-    "ipa": "/ɑːsk/"
+    "ipa": "/ɑːsk/",
+    "level": "A1"
   },
   {
     "id": 102,
@@ -813,7 +914,8 @@
     "translation": "жить",
     "association": "Лев живёт в Африке.",
     "example": "I live in a big city.",
-    "ipa": "/lɪv/"
+    "ipa": "/lɪv/",
+    "level": "A1"
   },
   {
     "id": 103,
@@ -821,7 +923,8 @@
     "translation": "взять",
     "association": "Взял стейк.",
     "example": "Take this book.",
-    "ipa": "/teɪk/"
+    "ipa": "/teɪk/",
+    "level": "A1"
   },
   {
     "id": 104,
@@ -829,7 +932,8 @@
     "translation": "работать",
     "association": "Вор к работе не приспособлен.",
     "example": "I work every day.",
-    "ipa": "/wɜːrk/"
+    "ipa": "/wɜːrk/",
+    "level": "A1"
   },
   {
     "id": 105,
@@ -837,7 +941,8 @@
     "translation": "бедный",
     "association": "Бедный в пурпурной футболке.",
     "example": "He is very poor.",
-    "ipa": "/pʊr/"
+    "ipa": "/pʊr/",
+    "level": "A2"
   },
   {
     "id": 106,
@@ -845,7 +950,8 @@
     "translation": "богатый",
     "association": "Богатый Ричард.",
     "example": "She is very rich.",
-    "ipa": "/rɪtʃ/"
+    "ipa": "/rɪtʃ/",
+    "level": "A2"
   },
   {
     "id": 107,
@@ -853,7 +959,8 @@
     "translation": "слабый",
     "association": "Слабая Вика.",
     "example": "He feels weak today.",
-    "ipa": "/wiːk/"
+    "ipa": "/wiːk/",
+    "level": "A2"
   },
   {
     "id": 108,
@@ -861,7 +968,8 @@
     "translation": "любимый",
     "association": "Мой любимый клуб фаворит в этом сезоне.",
     "example": "This is my favorite song.",
-    "ipa": "/ˈfeɪ.vər.ɪt/"
+    "ipa": "/ˈfeɪ.vər.ɪt/",
+    "level": "B1"
   },
   {
     "id": 109,
@@ -869,7 +977,8 @@
     "translation": "медленный",
     "association": "Слоу-мо - это эффект замедленной съемки.",
     "example": "The turtle is very slow.",
-    "ipa": "/sloʊ/"
+    "ipa": "/sloʊ/",
+    "level": "A1"
   },
   {
     "id": 110,
@@ -877,7 +986,8 @@
     "translation": "быстрый",
     "association": "Фастфуд - быстрая еда.",
     "example": "He runs very fast.",
-    "ipa": "/fæst/"
+    "ipa": "/fæst/",
+    "level": "A1"
   },
   {
     "id": 111,
@@ -885,7 +995,8 @@
     "translation": "талантливый",
     "association": "Ты просто талант, Тед.",
     "example": "She is a talented artist.",
-    "ipa": "/ˈtæl.ən.tɪd/"
+    "ipa": "/ˈtæl.ən.tɪd/",
+    "level": "B1"
   },
   {
     "id": 112,
@@ -893,7 +1004,8 @@
     "translation": "терпеливый",
     "association": "Пациент должен быть терпеливым.",
     "example": "Be patient with others.",
-    "ipa": "/ˈpeɪ.ʃənt/"
+    "ipa": "/ˈpeɪ.ʃənt/",
+    "level": "B1"
   },
   {
     "id": 113,
@@ -901,7 +1013,8 @@
     "translation": "приходить",
     "association": "Приди ко мне (кам).",
     "example": "Come to my house.",
-    "ipa": "/kʌm/"
+    "ipa": "/kʌm/",
+    "level": "A1"
   },
   {
     "id": 114,
@@ -909,7 +1022,8 @@
     "translation": "идти, ездить",
     "association": "Идём играть в го.",
     "example": "I go to school.",
-    "ipa": "/ɡoʊ/"
+    "ipa": "/ɡoʊ/",
+    "level": "A1"
   },
   {
     "id": 115,
@@ -917,7 +1031,8 @@
     "translation": "делать",
     "association": "Думать прежде, чем делать.",
     "example": "Do your homework.",
-    "ipa": "/duː/"
+    "ipa": "/duː/",
+    "level": "A1"
   },
   {
     "id": 116,
@@ -925,7 +1040,8 @@
     "translation": "кушать",
     "association": "Eat meat — кушать мясо.",
     "example": "I eat breakfast every day.",
-    "ipa": "/iːt/"
+    "ipa": "/iːt/",
+    "level": "A1"
   },
   {
     "id": 117,
@@ -933,7 +1049,8 @@
     "translation": "играть",
     "association": "играть в PlayStation.",
     "example": "Kids play outside.",
-    "ipa": "/pleɪ/"
+    "ipa": "/pleɪ/",
+    "level": "A1"
   },
   {
     "id": 118,
@@ -941,7 +1058,8 @@
     "translation": "стоять",
     "association": "Стоять возле стенда.",
     "example": "Stand here.",
-    "ipa": "/stænd/"
+    "ipa": "/stænd/",
+    "level": "A1"
   },
   {
     "id": 119,
@@ -949,7 +1067,8 @@
     "translation": "положить",
     "association": "Положил пуговицу на стол",
     "example": "Put the book here.",
-    "ipa": "/pʊt/"
+    "ipa": "/pʊt/",
+    "level": "A1"
   },
   {
     "id": 120,
@@ -957,7 +1076,8 @@
     "translation": "платить",
     "association": "Заплатил через PayPal.",
     "example": "I pay for food.",
-    "ipa": "/peɪ/"
+    "ipa": "/peɪ/",
+    "level": "A1"
   },
   {
     "id": 121,
@@ -965,7 +1085,8 @@
     "translation": "забывать",
     "association": "Забыл пакет (фогет).",
     "example": "Don’t forget your keys.",
-    "ipa": "/fəˈɡet/"
+    "ipa": "/fəˈɡet/",
+    "level": "A1"
   },
   {
     "id": 122,
@@ -973,7 +1094,8 @@
     "translation": "помнить",
     "association": "Помню фильм Рэмбо.",
     "example": "I remember your name.",
-    "ipa": "/rɪˈmem.bər/"
+    "ipa": "/rɪˈmem.bər/",
+    "level": "A1"
   },
   {
     "id": 123,
@@ -981,7 +1103,8 @@
     "translation": "слушать",
     "association": "В Лисяне слушаю музыку.",
     "example": "Listen carefully.",
-    "ipa": "/ˈlɪs.ən/"
+    "ipa": "/ˈlɪs.ən/",
+    "level": "A1"
   },
   {
     "id": 124,
@@ -989,7 +1112,8 @@
     "translation": "художник",
     "association": "Художник рисует в Paint.",
     "example": "The painter creates art.",
-    "ipa": "/ˈpeɪn.tər/"
+    "ipa": "/ˈpeɪn.tər/",
+    "level": "B1"
   },
   {
     "id": 125,
@@ -997,7 +1121,8 @@
     "translation": "вилка",
     "association": "Форточку открыли вилкой.",
     "example": "Use a fork to eat.",
-    "ipa": "/fɔːrk/"
+    "ipa": "/fɔːrk/",
+    "level": "A1"
   },
   {
     "id": 126,
@@ -1005,7 +1130,8 @@
     "translation": "листок",
     "association": "Щит нарисован на листочке.",
     "example": "Take a sheet of paper.",
-    "ipa": "/ʃiːt/"
+    "ipa": "/ʃiːt/",
+    "level": "A1"
   },
   {
     "id": 127,
@@ -1013,7 +1139,8 @@
     "translation": "ухо",
     "association": "У Иры большие уши.",
     "example": "My ear hurts.",
-    "ipa": "/ɪər/"
+    "ipa": "/ɪər/",
+    "level": "A1"
   },
   {
     "id": 128,
@@ -1021,7 +1148,8 @@
     "translation": "нога",
     "association": "Наступил на Лего, теперь болит нога.",
     "example": "My leg is tired.",
-    "ipa": "/leɡ/"
+    "ipa": "/leɡ/",
+    "level": "A1"
   },
   {
     "id": 129,
@@ -1029,7 +1157,8 @@
     "translation": "живот",
     "association": "У стоматолога болит живот.",
     "example": "My stomach hurts.",
-    "ipa": "/ˈstʌm.ək/"
+    "ipa": "/ˈstʌm.ək/",
+    "level": "A1"
   },
   {
     "id": 130,
@@ -1037,7 +1166,8 @@
     "translation": "глаз",
     "association": "Закрыл глаза и сказал «ай».",
     "example": "This story tells about a pirate with one eye.",
-    "ipa": "/aɪ/"
+    "ipa": "/aɪ/",
+    "level": "A1"
   },
   {
     "id": 131,
@@ -1045,7 +1175,8 @@
     "translation": "губы",
     "association": "У Лепса большие губы.",
     "example": "Her lips are red.",
-    "ipa": "/lɪps/"
+    "ipa": "/lɪps/",
+    "level": "A1"
   },
   {
     "id": 132,
@@ -1053,7 +1184,8 @@
     "translation": "карта",
     "association": "Путешествие на мопеде с картой.",
     "example": "Look at the map.",
-    "ipa": "/mæp/"
+    "ipa": "/mæp/",
+    "level": "A1"
   },
   {
     "id": 133,
@@ -1061,7 +1193,8 @@
     "translation": "молоток",
     "association": "Молоток в Хаммере.",
     "example": "Use a hammer.",
-    "ipa": "/ˈhæm.ər/"
+    "ipa": "/ˈhæm.ər/",
+    "level": "A1"
   },
   {
     "id": 134,
@@ -1069,7 +1202,8 @@
     "translation": "ключ",
     "association": "Ключи от Киа.",
     "example": "I lost my key.",
-    "ipa": "/kiː/"
+    "ipa": "/kiː/",
+    "level": "A1"
   },
   {
     "id": 135,
@@ -1077,7 +1211,8 @@
     "translation": "утюг",
     "association": "На утюг пролил айран.",
     "example": "The iron is hot.",
-    "ipa": "/ˈaɪ.ərn/"
+    "ipa": "/ˈaɪ.ərn/",
+    "level": "A1"
   },
   {
     "id": 136,
@@ -1085,7 +1220,8 @@
     "translation": "рубашка",
     "association": "На рубашке изображён чёрт .",
     "example": "He wears a white shirt.",
-    "ipa": "/ʃɜːrt/"
+    "ipa": "/ʃɜːrt/",
+    "level": "A1"
   },
   {
     "id": 137,
@@ -1093,7 +1229,8 @@
     "translation": "привлекательный",
     "association": "Привлекательный аттракцион.",
     "example": "She is very attractive.",
-    "ipa": "/əˈtræk.tɪv/"
+    "ipa": "/əˈtræk.tɪv/",
+    "level": "A1"
   },
   {
     "id": 138,
@@ -1101,7 +1238,8 @@
     "translation": "внимательный",
     "association": "Внимательно смотрим на тень.",
     "example": "He is very attentive.",
-    "ipa": "/əˈten.tɪv/"
+    "ipa": "/əˈten.tɪv/",
+    "level": "A1"
   },
   {
     "id": 139,
@@ -1109,7 +1247,8 @@
     "translation": "кассир",
     "association": "У кассира много кэша.",
     "example": "The cashier is friendly.",
-    "ipa": "/kæˈʃɪər/"
+    "ipa": "/kæˈʃɪər/",
+    "level": "A1"
   },
   {
     "id": 140,
@@ -1117,7 +1256,8 @@
     "translation": "бухгалтер",
     "association": "Бухгалтер создал аккаунт.",
     "example": "The accountant checks numbers.",
-    "ipa": "/əˈkaʊn.tənt/"
+    "ipa": "/əˈkaʊn.tənt/",
+    "level": "A1"
   },
   {
     "id": 141,
@@ -1125,7 +1265,8 @@
     "translation": "помощник",
     "association": "Помощник ассистента.",
     "example": "She works as an assistant.",
-    "ipa": "/əˈsɪs.tənt/"
+    "ipa": "/əˈsɪs.tənt/",
+    "level": "A1"
   },
   {
     "id": 142,
@@ -1133,7 +1274,8 @@
     "translation": "полицейский",
     "association": "У офицера есть страховой полис.",
     "example": "The police officer helps people.",
-    "ipa": "/pəˈliːs ˈɑːf.ɪ.sər/"
+    "ipa": "/pəˈliːs ˈɑːf.ɪ.sər/",
+    "level": "A1"
   },
   {
     "id": 143,
@@ -1141,7 +1283,8 @@
     "translation": "глупый",
     "association": "Сильный, но глупый.",
     "example": "That was a silly mistake.",
-    "ipa": "/ˈsɪl.i/"
+    "ipa": "/ˈsɪl.i/",
+    "level": "A1"
   },
   {
     "id": 144,
@@ -1149,7 +1292,8 @@
     "translation": "худой",
     "association": "Скинул вес и похудел.",
     "example": "He is very skinny.",
-    "ipa": "/ˈskɪn.i/"
+    "ipa": "/ˈskɪn.i/",
+    "level": "A1"
   },
   {
     "id": 145,
@@ -1157,7 +1301,8 @@
     "translation": "толстый",
     "association": "Толстый фотограф (фэт).",
     "example": "The cat is fat.",
-    "ipa": "/fæt/"
+    "ipa": "/fæt/",
+    "level": "A1"
   },
   {
     "id": 146,
@@ -1165,7 +1310,8 @@
     "translation": "застенчивый",
     "association": "Застенчивому предлагают чай.",
     "example": "She is very shy.",
-    "ipa": "/ʃaɪ/"
+    "ipa": "/ʃaɪ/",
+    "level": "A1"
   },
   {
     "id": 147,
@@ -1173,7 +1319,8 @@
     "translation": "мыть",
     "association": "Мой голову, чтобы вши не завелись (уош).",
     "example": "Wash your hands.",
-    "ipa": "/wɒʃ/"
+    "ipa": "/wɒʃ/",
+    "level": "A1"
   },
   {
     "id": 148,
@@ -1181,7 +1328,8 @@
     "translation": "начинать",
     "association": "Со знака старт, начинаем бег.",
     "example": "Let’s start now.",
-    "ipa": "/stɑːrt/"
+    "ipa": "/stɑːrt/",
+    "level": "A1"
   },
   {
     "id": 149,
@@ -1189,7 +1337,8 @@
     "translation": "находить",
     "association": "Нашел фантик.",
     "example": "I find my keys.",
-    "ipa": "/faɪnd/"
+    "ipa": "/faɪnd/",
+    "level": "A1"
   },
   {
     "id": 150,
@@ -1197,7 +1346,8 @@
     "translation": "приносить",
     "association": "Bring a ring — принести кольцо.",
     "example": "Bring me a book.",
-    "ipa": "/brɪŋ/"
+    "ipa": "/brɪŋ/",
+    "level": "A1"
   },
   {
     "id": 151,
@@ -1205,7 +1355,8 @@
     "translation": "готовить",
     "association": "Готовлю еду в кухне.",
     "example": "I cook dinner.",
-    "ipa": "/kʊk/"
+    "ipa": "/kʊk/",
+    "level": "A1"
   },
   {
     "id": 152,
@@ -1213,7 +1364,8 @@
     "translation": "проверять",
     "association": "Кассир проверяет чек",
     "example": "Check your work.",
-    "ipa": "/tʃek/"
+    "ipa": "/tʃek/",
+    "level": "A1"
   },
   {
     "id": 153,
@@ -1221,7 +1373,8 @@
     "translation": "оставаться",
     "association": "Всем стоять, оставаться на своих местах.",
     "example": "Stay here.",
-    "ipa": "/steɪ/"
+    "ipa": "/steɪ/",
+    "level": "A1"
   },
   {
     "id": 154,
@@ -1229,7 +1382,8 @@
     "translation": "думать",
     "association": "Думать о цинке.",
     "example": "Think before you speak.",
-    "ipa": "/θɪŋk/"
+    "ipa": "/θɪŋk/",
+    "level": "A1"
   },
   {
     "id": 155,
@@ -1237,7 +1391,8 @@
     "translation": "смешивать",
     "association": "Смешал Blend-a-med и Colgate .",
     "example": "We blend the colors.",
-    "ipa": "/blend/"
+    "ipa": "/blend/",
+    "level": "A1"
   },
   {
     "id": 156,
@@ -1245,7 +1400,8 @@
     "translation": "рано",
     "association": "Рано утром пить Эрл Грей.",
     "example": "I wake up early.",
-    "ipa": "/ˈɜːr.li/"
+    "ipa": "/ˈɜːr.li/",
+    "level": "A1"
   },
   {
     "id": 157,
@@ -1253,7 +1409,8 @@
     "translation": "поздно",
     "association": "Позднее лето.",
     "example": "It is too late.",
-    "ipa": "/leɪt/"
+    "ipa": "/leɪt/",
+    "level": "A1"
   },
   {
     "id": 158,
@@ -1261,7 +1418,8 @@
     "translation": "поддерживать",
     "association": "Поддерживать рукой яблоко сорта апорт (созвучно с «сапорт»)",
     "example": "I support my friends.",
-    "ipa": "/səˈpɔːrt/"
+    "ipa": "/səˈpɔːrt/",
+    "level": "A1"
   },
   {
     "id": 159,
@@ -1269,7 +1427,8 @@
     "translation": "прикрывать",
     "association": "Прикрыть ковер.",
     "example": "Cover the table.",
-    "ipa": "/ˈkʌv.ər/"
+    "ipa": "/ˈkʌv.ər/",
+    "level": "A1"
   },
   {
     "id": 160,
@@ -1277,7 +1436,8 @@
     "translation": "такой",
     "association": "Соус такой вкусный.",
     "example": "This is so good.",
-    "ipa": "/soʊ/"
+    "ipa": "/soʊ/",
+    "level": "A1"
   },
   {
     "id": 161,
@@ -1285,7 +1445,8 @@
     "translation": "очень",
     "association": "Очень хочется верить.",
     "example": "She is very happy.",
-    "ipa": "/ˈver.i/"
+    "ipa": "/ˈver.i/",
+    "level": "A1"
   },
   {
     "id": 162,
@@ -1293,7 +1454,8 @@
     "translation": "часто",
     "association": "Часто в одной и той же кофте.",
     "example": "I often read books.",
-    "ipa": "/ˈɑːf.ən/"
+    "ipa": "/ˈɑːf.ən/",
+    "level": "A1"
   },
   {
     "id": 163,
@@ -1301,7 +1463,8 @@
     "translation": "веселый",
     "association": "По фану, ради веселья.",
     "example": "This game is fun.",
-    "ipa": "/fʌn/"
+    "ipa": "/fʌn/",
+    "level": "A1"
   },
   {
     "id": 164,
@@ -1309,7 +1472,8 @@
     "translation": "голодный",
     "association": "«Angry and hungry» — «Злой и голодный»",
     "example": "I am very hungry.",
-    "ipa": "/ˈhʌŋ.ɡri/"
+    "ipa": "/ˈhʌŋ.ɡri/",
+    "level": "A1"
   },
   {
     "id": 165,
@@ -1317,7 +1481,8 @@
     "translation": "готовый",
     "association": "Редиска готова.",
     "example": "I am ready.",
-    "ipa": "/ˈred.i/"
+    "ipa": "/ˈred.i/",
+    "level": "A1"
   },
   {
     "id": 166,
@@ -1325,7 +1490,8 @@
     "translation": "налог",
     "association": "Таксист платит налоги.",
     "example": "He pays tax.",
-    "ipa": "/tæks/"
+    "ipa": "/tæks/",
+    "level": "A1"
   },
   {
     "id": 167,
@@ -1333,7 +1499,8 @@
     "translation": "менять",
     "association": "Поменял чемодан.",
     "example": "Change your clothes.",
-    "ipa": "/tʃeɪndʒ/"
+    "ipa": "/tʃeɪndʒ/",
+    "level": "A1"
   },
   {
     "id": 168,
@@ -1341,7 +1508,8 @@
     "translation": "обслуживать",
     "association": "Сервис - обслуживание.",
     "example": "They serve food.",
-    "ipa": "/sɜːrv/"
+    "ipa": "/sɜːrv/",
+    "level": "A1"
   },
   {
     "id": 169,
@@ -1349,7 +1517,8 @@
     "translation": "плавать",
     "association": "Свинья плавает.",
     "example": "I swim in the pool.",
-    "ipa": "/swɪm/"
+    "ipa": "/swɪm/",
+    "level": "A1"
   },
   {
     "id": 170,
@@ -1357,7 +1526,8 @@
     "translation": "игрушка",
     "association": "У той девочки игрушка лучше.",
     "example": "This toy is new.",
-    "ipa": "/tɔɪ/"
+    "ipa": "/tɔɪ/",
+    "level": "A1"
   },
   {
     "id": 171,
@@ -1365,7 +1535,8 @@
     "translation": "банковский счет",
     "association": "Аккаунт в банке.",
     "example": "I have a bank account.",
-    "ipa": "/bæŋk əˈkaʊnt/"
+    "ipa": "/bæŋk əˈkaʊnt/",
+    "level": "A1"
   },
   {
     "id": 172,
@@ -1373,7 +1544,8 @@
     "translation": "кормить",
     "association": "Федя кормит собаку.",
     "example": "Feed the cat.",
-    "ipa": "/fiːd/"
+    "ipa": "/fiːd/",
+    "level": "A1"
   },
   {
     "id": 173,
@@ -1381,7 +1553,8 @@
     "translation": "чинить",
     "association": "Фиксики чинят телефон.",
     "example": "Fix the phone.",
-    "ipa": "/fɪks/"
+    "ipa": "/fɪks/",
+    "level": "A1"
   },
   {
     "id": 174,
@@ -1389,7 +1562,8 @@
     "translation": "холодильник",
     "association": "Картошка фри в холодильнике.",
     "example": "Put it in the fridge.",
-    "ipa": "/frɪdʒ/"
+    "ipa": "/frɪdʒ/",
+    "level": "A1"
   },
   {
     "id": 175,
@@ -1397,7 +1571,8 @@
     "translation": "ручка",
     "association": "Питер Пен держит ручку.",
     "example": "I write with a pen.",
-    "ipa": "/pen/"
+    "ipa": "/pen/",
+    "level": "A1"
   },
   {
     "id": 176,
@@ -1405,7 +1580,8 @@
     "translation": "карандаш",
     "association": "Пенсионер пишет карандашом.",
     "example": "Use a pencil.",
-    "ipa": "/ˈpen.sɪl/"
+    "ipa": "/ˈpen.sɪl/",
+    "level": "A1"
   },
   {
     "id": 177,
@@ -1413,7 +1589,8 @@
     "translation": "стул",
     "association": "На стуле червь (чэр).",
     "example": "Sit on the chair.",
-    "ipa": "/tʃeər/"
+    "ipa": "/tʃeər/",
+    "level": "A1"
   },
   {
     "id": 178,
@@ -1421,7 +1598,8 @@
     "translation": "диван",
     "association": "Сова на диване.",
     "example": "The sofa is soft.",
-    "ipa": "/ˈsoʊ.fə/"
+    "ipa": "/ˈsoʊ.fə/",
+    "level": "A1"
   },
   {
     "id": 179,
@@ -1429,7 +1607,8 @@
     "translation": "комната",
     "association": "В комнате бутылка рома.",
     "example": "My room is clean.",
-    "ipa": "/ruːm/"
+    "ipa": "/ruːm/",
+    "level": "A1"
   },
   {
     "id": 180,
@@ -1437,7 +1616,8 @@
     "translation": "чашка",
     "association": "С чашки капает вода.",
     "example": "Take a cup of tea.",
-    "ipa": "/kʌp/"
+    "ipa": "/kʌp/",
+    "level": "A1"
   },
   {
     "id": 181,
@@ -1445,7 +1625,8 @@
     "translation": "дверь",
     "association": "Открываешь дверь - видишь дорогу.",
     "example": "Open the door.",
-    "ipa": "/dɔːr/"
+    "ipa": "/dɔːr/",
+    "level": "A1"
   },
   {
     "id": 182,
@@ -1453,7 +1634,8 @@
     "translation": "двор",
     "association": "Во дворе пушечное ядро.",
     "example": "Kids play in the yard.",
-    "ipa": "/jɑːrd/"
+    "ipa": "/jɑːrd/",
+    "level": "A1"
   },
   {
     "id": 183,
@@ -1461,7 +1643,8 @@
     "translation": "кровать",
     "association": "Бедняга лежит на кровати.",
     "example": "Go to bed.",
-    "ipa": "/bed/"
+    "ipa": "/bed/",
+    "level": "A1"
   },
   {
     "id": 184,
@@ -1469,7 +1652,8 @@
     "translation": "сумка",
     "association": "В багажнике сумка.",
     "example": "Take your bag.",
-    "ipa": "/bæɡ/"
+    "ipa": "/bæɡ/",
+    "level": "A1"
   },
   {
     "id": 185,
@@ -1477,7 +1661,8 @@
     "translation": "бассейн",
     "association": "Пуля лежит на дне бассейна.",
     "example": "We swim in the pool.",
-    "ipa": "/puːl/"
+    "ipa": "/puːl/",
+    "level": "A1"
   },
   {
     "id": 186,
@@ -1485,7 +1670,8 @@
     "translation": "забор",
     "association": "На заборе висит фен.",
     "example": "The fence is high.",
-    "ipa": "/fens/"
+    "ipa": "/fens/",
+    "level": "A1"
   },
   {
     "id": 187,
@@ -1493,7 +1679,8 @@
     "translation": "умный",
     "association": "Смартфон — умный телефон.",
     "example": "He is very smart.",
-    "ipa": "/smɑːrt/"
+    "ipa": "/smɑːrt/",
+    "level": "A1"
   },
   {
     "id": 188,
@@ -1501,7 +1688,8 @@
     "translation": "большой",
     "association": "Большой бегемот.",
     "example": "This house is big.",
-    "ipa": "/bɪɡ/"
+    "ipa": "/bɪɡ/",
+    "level": "A1"
   },
   {
     "id": 189,
@@ -1509,7 +1697,8 @@
     "translation": "маленький",
     "association": "Маленькая девочка пробует смолу.",
     "example": "The cat is small.",
-    "ipa": "/smɔːl/"
+    "ipa": "/smɔːl/",
+    "level": "A1"
   },
   {
     "id": 190,
@@ -1517,7 +1706,8 @@
     "translation": "окно",
     "association": "Переустановил windows у окна.",
     "example": "Open the window.",
-    "ipa": "/ˈwɪn.doʊ/"
+    "ipa": "/ˈwɪn.doʊ/",
+    "level": "A1"
   },
   {
     "id": 191,
@@ -1525,7 +1715,8 @@
     "translation": "говорить",
     "association": "Поговорить с Толиком.",
     "example": "Let’s talk.",
-    "ipa": "/tɔːk/"
+    "ipa": "/tɔːk/",
+    "level": "A1"
   },
   {
     "id": 192,
@@ -1533,7 +1724,8 @@
     "translation": "отвечать",
     "association": "Ансар ответит.",
     "example": "Answer the question.",
-    "ipa": "/ˈæn.sər/"
+    "ipa": "/ˈæn.sər/",
+    "level": "A1"
   },
   {
     "id": 193,
@@ -1541,7 +1733,8 @@
     "translation": "дух",
     "association": "Дух требует спирта.",
     "example": "The spirit of the team is strong.",
-    "ipa": "/ˈspɪr.ɪt/"
+    "ipa": "/ˈspɪr.ɪt/",
+    "level": "A1"
   },
   {
     "id": 194,
@@ -1549,7 +1742,8 @@
     "translation": "путешествовать",
     "association": "Путешествовать на трамвае.",
     "example": "I like to travel.",
-    "ipa": "/ˈtræv.əl/"
+    "ipa": "/ˈtræv.əl/",
+    "level": "A1"
   },
   {
     "id": 195,
@@ -1557,7 +1751,8 @@
     "translation": "описывать",
     "association": "Описывать диск ребят.",
     "example": "Describe this picture.",
-    "ipa": "/dɪˈskraɪb/"
+    "ipa": "/dɪˈskraɪb/",
+    "level": "A1"
   },
   {
     "id": 196,
@@ -1565,7 +1760,8 @@
     "translation": "остановить, остановиться",
     "association": "Стоп, остановись.",
     "example": "Stop the car.",
-    "ipa": "/stɒp/"
+    "ipa": "/stɒp/",
+    "level": "A1"
   },
   {
     "id": 197,
@@ -1573,7 +1769,8 @@
     "translation": "летать",
     "association": "Фломастер летает.",
     "example": "Birds can fly.",
-    "ipa": "/flaɪ/"
+    "ipa": "/flaɪ/",
+    "level": "A1"
   },
   {
     "id": 198,
@@ -1581,7 +1778,8 @@
     "translation": "сейчас",
     "association": "Но сейчас все по-другому.",
     "example": "Do it now.",
-    "ipa": "/naʊ/"
+    "ipa": "/naʊ/",
+    "level": "A1"
   },
   {
     "id": 199,
@@ -1589,7 +1787,8 @@
     "translation": "бежать",
     "association": "Бегать рано утром.",
     "example": "I run every day.",
-    "ipa": "/rʌn/"
+    "ipa": "/rʌn/",
+    "level": "A1"
   },
   {
     "id": 200,
@@ -1597,7 +1796,8 @@
     "translation": "получить",
     "association": "Получил во Франции багет.",
     "example": "I get your message.",
-    "ipa": "/ɡet/"
+    "ipa": "/ɡet/",
+    "level": "A1"
   },
   {
     "id": 201,
@@ -1605,7 +1805,8 @@
     "translation": "вернуться",
     "association": "Я зову собаку, чтобы вернулся: ко мне, Бэк.",
     "example": "Come back home.",
-    "ipa": "/kʌm bæk/"
+    "ipa": "/kʌm bæk/",
+    "level": "A1"
   },
   {
     "id": 202,
@@ -1613,7 +1814,8 @@
     "translation": "зарабатывать",
     "association": "Заработал орден.",
     "example": "He earns money.",
-    "ipa": "/ɜːrn/"
+    "ipa": "/ɜːrn/",
+    "level": "A1"
   },
   {
     "id": 203,
@@ -1621,7 +1823,8 @@
     "translation": "снова",
     "association": "Снова пришел Гена.",
     "example": "Try again.",
-    "ipa": "/əˈɡen/"
+    "ipa": "/əˈɡen/",
+    "level": "A1"
   },
   {
     "id": 204,
@@ -1629,7 +1832,8 @@
     "translation": "становиться",
     "association": "Стать жирным как бекон.",
     "example": "He wants to become a doctor.",
-    "ipa": "/bɪˈkʌm/"
+    "ipa": "/bɪˈkʌm/",
+    "level": "A1"
   },
   {
     "id": 205,
@@ -1637,7 +1841,8 @@
     "translation": "квартира",
     "association": "Флаг в квартире.",
     "example": "I live in a flat.",
-    "ipa": "/flæt/"
+    "ipa": "/flæt/",
+    "level": "A1"
   },
   {
     "id": 206,
@@ -1645,7 +1850,8 @@
     "translation": "лучший",
     "association": "best friend - лучший друг.",
     "example": "This is the best choice.",
-    "ipa": "/best/"
+    "ipa": "/best/",
+    "level": "A1"
   },
   {
     "id": 207,
@@ -1653,7 +1859,8 @@
     "translation": "корабль",
     "association": "Корабль перевозит шипы.",
     "example": "The ship sails on the sea.",
-    "ipa": "/ʃɪp/"
+    "ipa": "/ʃɪp/",
+    "level": "A1"
   },
   {
     "id": 208,
@@ -1661,7 +1868,8 @@
     "translation": "преимущество",
     "association": "Сильный адвокат - это преимущество в суде.",
     "example": "This gives us an advantage.",
-    "ipa": "/ədˈvæn.t̬ɪdʒ/"
+    "ipa": "/ədˈvæn.t̬ɪdʒ/",
+    "level": "A1"
   },
   {
     "id": 209,
@@ -1669,7 +1877,8 @@
     "translation": "выгода, польза",
     "association": "Бен и фитнесс-зал заключили выгодную сделку с пользой обеим.",
     "example": "This has many benefits.",
-    "ipa": "/ˈben.ə.fɪt/"
+    "ipa": "/ˈben.ə.fɪt/",
+    "level": "A1"
   },
   {
     "id": 210,
@@ -1677,7 +1886,8 @@
     "translation": "любопытный",
     "association": "Я попал в курьезную ситуацию из-за своего любопытства.",
     "example": "He is very curious.",
-    "ipa": "/ˈkjʊr.i.əs/"
+    "ipa": "/ˈkjʊr.i.əs/",
+    "level": "A1"
   },
   {
     "id": 211,
@@ -1685,7 +1895,8 @@
     "translation": "решение",
     "association": "Комикс ДиСи же читаем - это наше общее решение.",
     "example": "It was a hard decision.",
-    "ipa": "/dɪˈsɪʒ.ən/"
+    "ipa": "/dɪˈsɪʒ.ən/",
+    "level": "A1"
   },
   {
     "id": 212,
@@ -1693,7 +1904,8 @@
     "translation": "поддерживать",
     "association": "Поддержка придаёт кураж.",
     "example": "They encourage each other.",
-    "ipa": "/ɪnˈkɜː.rɪdʒ/"
+    "ipa": "/ɪnˈkɜː.rɪdʒ/",
+    "level": "A1"
   },
   {
     "id": 213,
@@ -1701,7 +1913,8 @@
     "translation": "улучшать",
     "association": "Им пруф нужен, чтобы улучшить все.",
     "example": "I want to improve my skills.",
-    "ipa": "/ɪmˈpruːv/"
+    "ipa": "/ɪmˈpruːv/",
+    "level": "A1"
   },
   {
     "id": 214,
@@ -1709,7 +1922,8 @@
     "translation": "умный",
     "association": "Я интеллигент, потому что умный и сообразительный.",
     "example": "She is very intelligent.",
-    "ipa": "/ɪnˈtel.ə.dʒənt/"
+    "ipa": "/ɪnˈtel.ə.dʒənt/",
+    "level": "A1"
   },
   {
     "id": 215,
@@ -1717,7 +1931,8 @@
     "translation": "необходимый",
     "association": "Несу сари, необходимый для индианки.",
     "example": "This step is necessary.",
-    "ipa": "/ˈnes.ə.ser.i/"
+    "ipa": "/ˈnes.ə.ser.i/",
+    "level": "A1"
   },
   {
     "id": 216,
@@ -1725,7 +1940,8 @@
     "translation": "давление",
     "association": "Качаю пресс с утра, чтобы выдерживать давление в животе.",
     "example": "He feels a lot of pressure.",
-    "ipa": "/ˈpreʃ.ɚ/"
+    "ipa": "/ˈpreʃ.ɚ/",
+    "level": "A1"
   },
   {
     "id": 217,
@@ -1733,7 +1949,8 @@
     "translation": "удовольствие",
     "association": "Удовольствие от пляжа.",
     "example": "It was a pleasure to meet you.",
-    "ipa": "/ˈpleʒ.ɚ/"
+    "ipa": "/ˈpleʒ.ɚ/",
+    "level": "A1"
   },
   {
     "id": 218,
@@ -1741,7 +1958,8 @@
     "translation": "предлагать",
     "association": "Сценарист предлагает свой сюжет режиссеру.",
     "example": "I suggest a new plan.",
-    "ipa": "/səˈdʒest/"
+    "ipa": "/səˈdʒest/",
+    "level": "A1"
   },
   {
     "id": 219,
@@ -1749,7 +1967,8 @@
     "translation": "великолепный",
     "association": "Малифисента — великолепный фильм.",
     "example": "The view is magnificent.",
-    "ipa": "/mæɡˈnɪf.ɪ.sənt/"
+    "ipa": "/mæɡˈnɪf.ɪ.sənt/",
+    "level": "A1"
   },
   {
     "id": 220,
@@ -1757,7 +1976,8 @@
     "translation": "последствие",
     "association": "Конь в последовательности - вот последствие",
     "example": "Every action has a consequence.",
-    "ipa": "/ˈkɑːn.sə.kwens/"
+    "ipa": "/ˈkɑːn.sə.kwens/",
+    "level": "A1"
   },
   {
     "id": 221,
@@ -1765,7 +1985,8 @@
     "translation": "должен",
     "association": "Я должен посмотреть сериал «Детство Шелдона».",
     "example": "I shall return.",
-    "ipa": "/ʃæl/"
+    "ipa": "/ʃæl/",
+    "level": "A1"
   },
   {
     "id": 222,
@@ -1773,7 +1994,8 @@
     "translation": "мысль",
     "association": "Мои мысли о трёхсотке.",
     "example": "That is a good thought.",
-    "ipa": "/θɔːt/"
+    "ipa": "/θɔːt/",
+    "level": "A1"
   },
   {
     "id": 223,
@@ -1781,7 +2003,8 @@
     "translation": "приручённый",
     "association": "Тёме подарили приручённого зверька.",
     "example": "The animal is tame.",
-    "ipa": "/teɪm/"
+    "ipa": "/teɪm/",
+    "level": "A1"
   },
   {
     "id": 224,
@@ -1789,7 +2012,8 @@
     "translation": "взор",
     "association": "Пристально смотрели за бьющим фонтаном гейзера.",
     "example": "She fixed her gaze on him.",
-    "ipa": "/ɡeɪz/"
+    "ipa": "/ɡeɪz/",
+    "level": "A1"
   },
   {
     "id": 225,
@@ -1797,7 +2021,8 @@
     "translation": "вещи",
     "association": "Смотрю сериал «Stranger Things» и сортирую вещи.",
     "example": "I have many things to do.",
-    "ipa": "/θɪŋz/"
+    "ipa": "/θɪŋz/",
+    "level": "A1"
   },
   {
     "id": 226,
@@ -1805,7 +2030,8 @@
     "translation": "несмотря на",
     "association": "Да, спит он несмотря на всё",
     "example": "Despite the rain, we went for a walk.",
-    "ipa": "/dɪˈspaɪt/"
+    "ipa": "/dɪˈspaɪt/",
+    "level": "A1"
   },
   {
     "id": 227,
@@ -1813,7 +2039,8 @@
     "translation": "тем не менее",
     "association": "Тем не менее повернули в неверный лес",
     "example": "It was raining. Nevertheless, we went out.",
-    "ipa": "/ˌnevərðəˈles/"
+    "ipa": "/ˌnevərðəˈles/",
+    "level": "A1"
   },
   {
     "id": 228,
@@ -1821,7 +2048,8 @@
     "translation": "осуществимый",
     "association": "Осуществим в вестибюле встречу",
     "example": "Is it feasible to finish today?",
-    "ipa": "/ˈfiːzəbl/"
+    "ipa": "/ˈfiːzəbl/",
+    "level": "A1"
   },
   {
     "id": 229,
@@ -1829,7 +2057,8 @@
     "translation": "рычаг",
     "association": "Тянет лев рычаг",
     "example": "He used his skills as leverage.",
-    "ipa": "/ˈlevərɪdʒ/"
+    "ipa": "/ˈlevərɪdʒ/",
+    "level": "A1"
   },
   {
     "id": 230,
@@ -1837,7 +2066,8 @@
     "translation": "менять",
     "association": "Чары меняют всё вокруг",
     "example": "I need to change my clothes.",
-    "ipa": "/tʃeɪndʒ/"
+    "ipa": "/tʃeɪndʒ/",
+    "level": "A1"
   },
   {
     "id": 231,
@@ -1845,7 +2075,8 @@
     "translation": "решать",
     "association": "Десятка сидит и выбирает, что делать",
     "example": "I can't decide what to eat.",
-    "ipa": "/dɪˈsaɪd/"
+    "ipa": "/dɪˈsaɪd/",
+    "level": "A1"
   },
   {
     "id": 232,
@@ -1853,7 +2084,8 @@
     "translation": "определённый",
     "association": "Сэр танцует определённый танец. Получил определённую дозу серотонина",
     "example": "I'm certain he is right.",
-    "ipa": "/ˈsɜːrtn/"
+    "ipa": "/ˈsɜːrtn/",
+    "level": "A1"
   },
   {
     "id": 233,
@@ -1861,7 +2093,8 @@
     "translation": "безусловно",
     "association": "Сэр танцует ли? Безусловно, да!",
     "example": "She certainly knows the answer.",
-    "ipa": "/ˈsɜːrtnli/"
+    "ipa": "/ˈsɜːrtnli/",
+    "level": "A1"
   },
   {
     "id": 234,
@@ -1869,7 +2102,8 @@
     "translation": "между",
     "association": "Битва вин между сомелье",
     "example": "I sat between Tom and Jerry.",
-    "ipa": "/bɪˈtwiːn/"
+    "ipa": "/bɪˈtwiːn/",
+    "level": "A1"
   },
   {
     "id": 235,
@@ -1877,7 +2111,8 @@
     "translation": "среди",
     "association": "Игра Among Us переводится как «Среди нас»",
     "example": "She is popular among her friends.",
-    "ipa": "/əˈmʌŋ/"
+    "ipa": "/əˈmʌŋ/",
+    "level": "A1"
   },
   {
     "id": 236,
@@ -1885,7 +2120,8 @@
     "translation": "неловкий",
     "association": "О, квак! Неловко получилось",
     "example": "There was an awkward silence.",
-    "ipa": "/ˈɔːkwərd/"
+    "ipa": "/ˈɔːkwərd/",
+    "level": "A1"
   },
   {
     "id": 237,
@@ -1893,7 +2129,8 @@
     "translation": "состояние",
     "association": "Кон дишн — кондиционер меняет состояние воздуха",
     "example": "My car is in good condition.",
-    "ipa": "/kənˈdɪʃn/"
+    "ipa": "/kənˈdɪʃn/",
+    "level": "A1"
   },
   {
     "id": 238,
@@ -1901,7 +2138,8 @@
     "translation": "обожать",
     "association": "Обожаю, когда дорога пустая",
     "example": "I adore chocolate cake.",
-    "ipa": "/əˈdɔːr/"
+    "ipa": "/əˈdɔːr/",
+    "level": "A1"
   },
   {
     "id": 239,
@@ -1909,7 +2147,8 @@
     "translation": "карабкаться",
     "association": "Клеем альпинист карабкается вверх",
     "example": "We plan to climb the mountain.",
-    "ipa": "/klaɪm/"
+    "ipa": "/klaɪm/",
+    "level": "A1"
   },
   {
     "id": 240,
@@ -1917,7 +2156,8 @@
     "translation": "ревнивый",
     "association": "Джей Ло ревнует мужа",
     "example": "Don't be jealous of her success.",
-    "ipa": "/ˈdʒeləs/"
+    "ipa": "/ˈdʒeləs/",
+    "level": "A1"
   },
   {
     "id": 241,
@@ -1925,6 +2165,7 @@
     "translation": "позволить себе",
     "association": "А Форд могу себе позволить",
     "example": "I can't afford a new phone.",
-    "ipa": "/əˈfɔːrd/"
+    "ipa": "/əˈfɔːrd/",
+    "level": "A1"
   }
 ]
