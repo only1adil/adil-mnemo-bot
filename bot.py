@@ -2,84 +2,53 @@
 import asyncio
 import logging
 import random
-import os
 import time  # ✅ ИСПРАВЛЕНО: Добавлен импорт в начало
 from datetime import datetime
-from typing import Dict, Tuple
-from difflib import SequenceMatcher
-from dotenv import load_dotenv
+from typing import Dict
 
-# ⚙️ КОНФИГУРАЦИЯ ЛОГИРОВАНИЯ
-def setup_logging():
-    """Настраивает логирование в консоль и файл"""
-    log_level = os.getenv('LOG_LEVEL', 'INFO')
-    log_file = os.getenv('LOG_FILE', None)
-    
-    logger = logging.getLogger()
-    logger.setLevel(getattr(logging, log_level))
-    
-    # Формат для логов
-    formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
-    
-    # Логирование в консоль
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
-    
-    # Логирование в файл (если указан)
-    if log_file:
-        try:
-            file_handler = logging.FileHandler(log_file, encoding='utf-8')
-            file_handler.setFormatter(formatter)
-            logger.addHandler(file_handler)
-            print(f"✅ Логирование в файл: {log_file}")
-        except Exception as e:
-            print(f"⚠️  Не удалось открыть файл логов {log_file}: {e}")
-
-# Загружаем переменные окружения до настройки логирования
-load_dotenv()
-setup_logging()
+from app_config import bootstrap_environment
 
 from aiogram import Bot, Dispatcher, types, F
-from aiogram.filters import Command, StateFilter
+from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from scheduler_tasks import auto_sync_words, schedule_tasks
 from storage import (
+    initialize_storage,
     load_users, save_users, add_or_update_word_progress, get_user_progress, 
-    init_user_quotas, get_user_quotas, update_user_quotas, update_user_error_streak,
+    init_user_quotas, get_user_quotas,
     save_session, load_session, delete_session,  # Функции сеансов
     # Новые функции для отслеживания прогресса ученика
     log_session, log_word_error, check_and_award_achievements, get_achievements,
     # Функции для команд пользователя
     get_student_progress, get_most_problematic_words,
     # Функция для отслеживания изменений файла
-    check_words_json_updated
+    check_words_json_updated,
+    # Функции для работы с уровнем пользователя
+    get_user_level, set_user_level,
+    # ✅ Новые функции для статистики по уровню
+    get_user_progress_for_level
 )
 from learning import (
     get_words_for_session,
     calculate_next_review,
-    get_word_by_id,
     get_total_words,
     get_words_to_review,
     calculate_session_accuracy
 )
-from db import init_db, sync_words_from_json
-
+from db import sync_words_from_json
+from handlers_profile import register_profile_handlers
+from text_utils import check_answer, esc, format_word_with_ipa
+from ui import get_main_keyboard
 # ==================== ИНИЦИАЛИЗАЦИЯ БД ====================
 logging.info("🔧 Инициализация базы данных...")
-init_db()
-sync_words_from_json()
+initialize_storage()
 logging.info("✅ База данных готова!")
 
 # ⚙️ КОНФИГУРАЦИЯ
-TOKEN = os.getenv("BOT_TOKEN")
-if not TOKEN:
-    raise ValueError("❌ BOT_TOKEN не найден в .env файле! Скопируй .env.example в .env и добавь свой токен.")
+TOKEN = bootstrap_environment()
 
 logging.info("🚀 Запуск MNEME бота...")
 
@@ -92,61 +61,23 @@ scheduler = AsyncIOScheduler()
 class LearningState(StatesGroup):
     learning_mode = State()      # Режим обучения: показываем слово и кнопки
     recall_input = State()        # Ввод ответа в режиме recall
+    choosing_level = State()      # Выбор уровня сложности
 
 
 # Хранилище текущей сессии пользователя
 user_sessions = {}
 
-
-def normalize_answer(answer: str) -> str:
-    """Нормализует ответ пользователя"""
-    return answer.lower().strip()
-
-
-def format_word_with_ipa(word: Dict) -> str:
-    """Форматирует слово с IPA транскрипцией. Возвращает "word - /ipa/" или просто "word" если IPA нет"""
-    word_text = word.get('word', '')
-    ipa = word.get('ipa', '')
-    if ipa:
-        return f"{word_text} — <i>{ipa}</i>"
-    return word_text
-
-
-def check_answer(user_answer: str, correct_answer: str) -> Tuple[bool, str]:
-    """
-    Проверяет ответ пользователя с нечеткой логикой.
-    Возвращает (is_correct, status)
-    """
-    user_normalized = normalize_answer(user_answer)
-    correct_normalized = normalize_answer(correct_answer)
-    
-    # Точное совпадение
-    if user_normalized == correct_normalized:
-        return True, "correct"
-    
-    # Проверка подобия (для синонимов)
-    similarity = SequenceMatcher(None, user_normalized, correct_normalized).ratio()
-    if similarity >= 0.7:
-        return True, "similar"
-    
-    # Проверка если правильный ответ содержит ответ пользователя как подстроку
-    if user_normalized in correct_normalized and len(user_normalized) > 2:
-        return True, "similar"
-    
-    return False, "wrong"
-
-
-def get_main_keyboard():
-    """Основная клавиатура"""
-    keyboard = ReplyKeyboardMarkup(
-        keyboard=[
-            [KeyboardButton(text="📚 Учить слова")],
-            [KeyboardButton(text="📊 Мой прогресс")],
-            [KeyboardButton(text="ℹ️ О боте")]
-        ],
-        resize_keyboard=True
-    )
-    return keyboard
+register_profile_handlers(
+    dp=dp,
+    get_main_keyboard=get_main_keyboard,
+    get_user_level=get_user_level,
+    set_user_level=set_user_level,
+    get_user_progress_for_level=get_user_progress_for_level,
+    get_user_quotas=get_user_quotas,
+    get_student_progress=get_student_progress,
+    get_achievements=get_achievements,
+    get_most_problematic_words=get_most_problematic_words,
+)
 
 
 async def register_user(user_id: int):
@@ -160,22 +91,41 @@ async def register_user(user_id: int):
 
 
 @dp.message(Command("start"))
-async def cmd_start(message: types.Message):
+async def cmd_start(message: types.Message, state: FSMContext):
     """Обработчик команды /start"""
     user_id = message.from_user.id
     logging.info(f"Пользователь {user_id}: выполнена команда /start")
     
     await register_user(user_id)
     
+    # Получаем текущий уровень пользователя
+    current_level = get_user_level(user_id)
+    
     welcome_text = (
         "👋 Добро пожаловать в Mneme - бот для изучения английских слов!\n\n"
-        "🧠 Метод: Спaced Repetition (интервальное повторение)\n"
+        "🧠 Метод: Spaced Repetition (интервальное повторение)\n"
         f"📚 Всего слов: {get_total_words()}\n"
         f"📖 На повторение: {get_words_to_review(user_id)}\n\n"
-        "Используйте кнопки ниже для навигации."
+        f"📊 <b>Ваш уровень: {current_level}</b>\n\n"
+        "Хотите изменить уровень сложности?"
     )
     
-    await message.answer(welcome_text, reply_markup=get_main_keyboard())
+    # Создаем инлайн-клавиатуру для выбора уровня
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="🟢 A1 (Beginner)", callback_data="level_A1"),
+            InlineKeyboardButton(text="🟡 A2 (Elementary)", callback_data="level_A2"),
+        ],
+        [
+            InlineKeyboardButton(text="🟠 B1 (Intermediate)", callback_data="level_B1"),
+            InlineKeyboardButton(text="🔴 B2 (Upper-Int)", callback_data="level_B2"),
+        ],
+        [
+            InlineKeyboardButton(text="✅ Продолжить", callback_data="continue_to_main"),
+        ]
+    ])
+    
+    await message.answer(welcome_text, reply_markup=keyboard, parse_mode="HTML")
 
 
 @dp.message(F.text == "📚 Учить слова")
@@ -220,7 +170,8 @@ async def start_learning(message: types.Message, state: FSMContext):
                 return
         
         # Нет сохраненного сеанса - создаем новый
-        words = get_words_for_session(user_id, words_per_session=10)
+        user_level = get_user_level(user_id)  # Получаем уровень пользователя
+        words = get_words_for_session(user_id, words_per_session=10, level=user_level)
         
         if not words:
             logging.info(f"Пользователь {user_id}: нет слов для повторения")
@@ -296,9 +247,9 @@ async def show_learning_mode(message: types.Message, state: FSMContext, user_id:
     word_text = (
         f"📚 <b>learning mode</b>\n\n"
         f"<b>{word_display}</b>\n\n"
-        f"📖 <b>Перевод:</b> {current_word['translation']}\n\n"
-        f"💡 <b>Ассоциация:</b> {current_word['association']}\n\n"
-        f"📝 <b>Пример:</b> <i>{current_word['example']}</i>\n\n"
+        f"📖 <b>Перевод:</b> {esc(current_word.get('translation', ''))}\n\n"
+        f"💡 <b>Ассоциация:</b> {esc(current_word.get('association', ''))}\n\n"
+        f"📝 <b>Пример:</b> <i>{esc(current_word.get('example', ''))}</i>\n\n"
         "Ты запомнил слово?"
     )
     
@@ -433,6 +384,16 @@ async def finish_session(message: types.Message, state: FSMContext, user_id: int
     delete_session(user_id)
     
     await state.clear()
+
+
+# ==================== ОБРАБОТЧИКИ ВЫБОРА УРОВНЯ ====================
+
+@dp.callback_query(F.data == "continue_to_main")
+async def handle_continue_to_main(query: types.CallbackQuery, state: FSMContext):
+    """Переход в главное меню"""
+    await query.answer()
+    await query.message.delete()
+    await query.message.answer("👋 Выберите действие:", reply_markup=get_main_keyboard())
 
 
 # Обработчики для продолжения/нового сеанса
@@ -589,7 +550,7 @@ async def handle_not_understood(query: types.CallbackQuery, state: FSMContext):
     word_display = format_word_with_ipa(current_word)
     help_text = (
         f"<b>Помощь с {word_display}:</b>\n\n"
-        f"<b>Простой перевод:</b> {current_word['translation']}\n\n"
+        f"<b>Простой перевод:</b> {esc(current_word.get('translation', ''))}\n\n"
         f"Попробуй еще раз запомнить это слово."
     )
     
@@ -642,9 +603,9 @@ async def handle_dont_know(query: types.CallbackQuery, state: FSMContext):
     word_display = format_word_with_ipa(current_word)
     answer_text = (
         f"📌 <b>Вот правильный ответ:</b>\n\n"
-        f"<b>{word_display}</b> — {current_word['translation']}\n\n"
-        f"<b>Ассоциация:</b> {current_word['association']}\n\n"
-        f"<b>Пример:</b> <i>{current_word['example']}</i>\n\n"
+        f"<b>{word_display}</b> — {esc(current_word.get('translation', ''))}\n\n"
+        f"<b>Ассоциация:</b> {esc(current_word.get('association', ''))}\n\n"
+        f"<b>Пример:</b> <i>{esc(current_word.get('example', ''))}</i>\n\n"
         "Это слово вернулось в режим обучения."
     )
     
@@ -666,6 +627,7 @@ async def handle_dont_know(query: types.CallbackQuery, state: FSMContext):
     
     # Переходим к следующему слову
     session["current_index"] += 1
+    save_session(user_id, session)
     
     if session["current_index"] < len(session["words"]):
         # Выбираем случайно: показываем learning или recall для следующего слова
@@ -681,7 +643,7 @@ async def handle_dont_know(query: types.CallbackQuery, state: FSMContext):
         await finish_session(query.message, state, user_id)
 
 
-@dp.message(LearningState.recall_input)
+@dp.message(LearningState.recall_input, F.text)
 async def handle_recall_answer(message: types.Message, state: FSMContext):
     """Обрабатывает ввод пользователя в режиме recall"""
     user_id = message.from_user.id
@@ -700,7 +662,7 @@ async def handle_recall_answer(message: types.Message, state: FSMContext):
     
     current_word = session["words"][session["current_index"]]
     word_id = current_word["id"]
-    user_answer = message.text
+    user_answer = message.text or ""
     
     # Проверяем ответ
     is_correct, status = check_answer(user_answer, current_word["translation"])
@@ -714,7 +676,7 @@ async def handle_recall_answer(message: types.Message, state: FSMContext):
         if status == "correct":
             response = "✅ <b>Точный ответ!</b>"
         else:
-            response = f"✅ <b>Верно!</b>\n\nОсновной вариант: <i>{current_word['translation']}</i>"
+            response = f"✅ <b>Верно!</b>\n\nОсновной вариант: <i>{esc(current_word.get('translation', ''))}</i>"
         
         await message.answer(response, parse_mode="HTML")
         
@@ -753,9 +715,9 @@ async def handle_recall_answer(message: types.Message, state: FSMContext):
         word_display = format_word_with_ipa(current_word)
         wrong_text = (
             f"❌ <b>Неправильно!</b>\n\n"
-            f"<b>Правильный ответ:</b> {current_word['translation']}\n\n"
+            f"<b>Правильный ответ:</b> {esc(current_word.get('translation', ''))}\n\n"
             f"<b>Слово:</b> {word_display}\n\n"
-            f"<b>Ассоциация:</b> {current_word['association']}"
+            f"<b>Ассоциация:</b> {esc(current_word.get('association', ''))}"
         )
         
         await message.answer(wrong_text, parse_mode="HTML")
@@ -789,205 +751,17 @@ async def handle_recall_answer(message: types.Message, state: FSMContext):
         await finish_session(message, state, user_id)
 
 
+@dp.message(LearningState.recall_input)
+async def handle_recall_non_text(message: types.Message):
+    """Отсекает non-text сообщения в режиме recall"""
+    await message.answer("✍️ Введите перевод текстом, пожалуйста.")
 
-@dp.message(F.text == "📊 Мой прогресс")
-async def show_progress(message: types.Message):
-    """Показывает прогресс пользователя"""
-    user_id = message.from_user.id
-    
-    total_words = get_total_words()
-    words_to_review = get_words_to_review(user_id)
-    
-    # Подсчитываем выученные слова
-    user_progress = get_user_progress(user_id)
-    learned_count = 0
-    learning_count = 0
-    
-    for word_id, word_data in user_progress.get("words", {}).items():
-        if word_data.get("attempt_count", 0) >= 4:  # 4 правильных попытки = выучено
-            learned_count += 1
-        elif word_data.get("mode") == "learning" or word_data.get("mode") == "recall":
-            learning_count += 1
-    
-    progress_text = (
-        f"📊 <b>Твой прогресс:</b>\n\n"
-        f"📚 <b>Всего слов:</b> {total_words}\n"
-        f"📖 <b>На повторение сегодня:</b> {words_to_review}\n"
-        f"🧠 <b>В процессе обучения:</b> {learning_count}\n"
-        f"✅ <b>Выучено:</b> {learned_count}\n\n"
-        f"💪 Продолжай в том же духе!"
-    )
-    
-    await message.answer(progress_text, reply_markup=get_main_keyboard(), parse_mode="HTML")
-
-
-@dp.message(F.text == "ℹ️ О боте")
-async def about_bot(message: types.Message):
-    """Информация о боте"""
-    user_id = message.from_user.id
-    quotas = get_user_quotas(user_id)
-    
-    about_text = (
-        "ℹ️ <b>О боте Mneme:</b>\n\n"
-        "Этот бот поможет тебе выучить английские слова методом <b>Spaced Repetition</b> "
-        "(интервальное повторение) с адаптивной нагрузкой.\n\n"
-        
-        "<b>📚 Как это работает:</b>\n\n"
-        "<b>1️⃣ Режим обучения (Learning):</b>\n"
-        "Видишь слово с переводом и ассоциацией\n"
-        "• ✅ Запомнил — переходим к проверке\n"
-        "• 🔁 Ещё раз — повторяем это же слово\n"
-        "• ❌ Не понял — показываем дополнительную помощь\n\n"
-        
-        "<b>2️⃣ Режим проверки (Recall):</b>\n"
-        "Видишь англ. слово и пишешь перевод\n"
-        "• ✅ Правильный ответ → интервал повторения\n"
-        "• ❌ Неправильный ответ → обратно в обучение\n"
-        "• 🤔 Не знаю → показываем ответ и обучение\n\n"
-        
-        "<b>⏱️ Интервалы повторения:</b>\n"
-        "1-й правильный ответ → 10 минут\n"
-        "2-й правильный ответ → 1 день\n"
-        "3-й правильный ответ → 3 дня\n"
-        "4-й правильный ответ → 7 дней\n"
-        "Ошибка → обратно на 10 минут\n\n"
-        
-        "<b>📊 Адаптивная нагрузка:</b>\n"
-        f"🎯 Твои текущие параметры:\n"
-        f"• Новые слова в день: <b>{quotas.get('new_words', 5)}</b>\n"
-        f"• Повторений в день: <b>{quotas.get('review_words', 20)}</b>\n\n"
-        f"Нагрузка автоматически адаптируется после каждого сеанса в зависимости от твоей точности.\n\n"
-        
-        "<b>💡 Советы:</b>\n"
-        "• Не спешите с нажатием 'Запомнил'\n"
-        "• Ассоциации помогают запомнить лучше\n"
-        "• Консистентность важнее интенсивности!\n"
-    )
-    
-    await message.answer(about_text, reply_markup=get_main_keyboard(), parse_mode="HTML")
-
-
-@dp.message(Command("stats"))
-async def cmd_stats(message: types.Message):
-    """Показывает расширенную статистику ученика"""
-    user_id = message.from_user.id
-    
-    # ✅ ИСПРАВЛЕНО: Функции теперь импортированы в начале
-    try:
-        progress = get_student_progress(user_id)
-        stats = progress.get('statistics', {})
-        level = progress.get('learning_level', {})
-        achievements = get_achievements(user_id)
-        
-        stats_text = f"""
-📊 <b>Ваша подробная статистика</b>
-
-<b>🎯 Уровень:</b> {level.get('level', 'Новичок')}
-{level.get('description', '')}
-
-<b>📚 Прогресс:</b>
-• Выучено слов: <b>{stats.get('total_words_learned', 0)}</b>
-• Всего сеансов: <b>{stats.get('total_sessions', 0)}</b>
-• Правильных ответов: <b>{stats.get('total_correct_answers', 0)}</b>
-• Ошибок: <b>{stats.get('total_incorrect_answers', 0)}</b>
-
-<b>📈 Точность и время:</b>
-• Средняя точность: <b>{stats.get('average_accuracy', 0):.1f}%</b>
-• Минут учебы: <b>{stats.get('total_study_minutes', 0)}</b>
-
-<b>🔥 Полосы ошибок:</b>
-• Текущая: <b>{stats.get('current_error_streak', 0)}</b>
-• Максимальная: <b>{stats.get('longest_error_streak', 0)}</b>
-        """.strip()
-        
-        if achievements:
-            stats_text += f"\n\n🏆 <b>Достижения:</b>\n"
-            for ach in achievements[:5]:  # Показываем первые 5
-                stats_text += f"• {ach['achievement_name']}\n"
-            if len(achievements) > 5:
-                stats_text += f"• ... и еще {len(achievements) - 5} достижений"
-        
-        await message.answer(stats_text, reply_markup=get_main_keyboard(), parse_mode="HTML")
-    except Exception as e:
-        logging.error(f"Ошибка при получении статистики для {user_id}: {e}")
-        await message.answer(
-            "❌ Ошибка при загрузке статистики. Попробуйте позже.",
-            reply_markup=get_main_keyboard()
-        )
 
 
 @dp.message(Command("learn"))
 async def cmd_learn(message: types.Message, state: FSMContext):
     """Обработчик команды /learn"""
     await start_learning(message, state)
-
-
-@dp.message(Command("difficult"))
-async def cmd_difficult(message: types.Message):
-    """Показывает слова, в которых пользователь часто ошибается"""
-    user_id = message.from_user.id
-    
-    try:
-        difficult = get_most_problematic_words(user_id, limit=10)
-        
-        if not difficult:
-            await message.answer(
-                "✅ <b>Отличная работа!</b>\n\n"
-                "Нет слов, в которых вы часто ошибаетесь. Продолжайте учиться!",
-                reply_markup=get_main_keyboard(),
-                parse_mode="HTML"
-            )
-            return
-        
-        difficult_text = "⚠️ <b>Слова, в которых вы часто ошибаетесь:</b>\n\n"
-        
-        for i, word in enumerate(difficult, 1):
-            difficult_text += f"{i}. <b>{word['word']}</b> — {word['translation']}\n"
-            difficult_text += f"   Ошибок: {word['error_count']}\n\n"
-        
-        difficult_text += "💡 Рекомендуем повторить эти слова чаще!"
-        
-        await message.answer(difficult_text, reply_markup=get_main_keyboard(), parse_mode="HTML")
-    except Exception as e:
-        logging.error(f"Ошибка при получении трудных слов для {user_id}: {e}")
-        await message.answer(
-            "❌ Ошибка при загрузке данных. Попробуйте позже.",
-            reply_markup=get_main_keyboard()
-        )
-
-
-@dp.message(Command("achievements"))
-async def cmd_achievements(message: types.Message):
-    """Показывает все полученные достижения"""
-    user_id = message.from_user.id
-    
-    try:
-        achievements = get_achievements(user_id)
-        
-        if not achievements:
-            await message.answer(
-                "📭 <b>Достижений пока нет</b>\n\n"
-                "Продолжайте учиться и вы скоро разблокируете первые достижения! 🚀",
-                reply_markup=get_main_keyboard(),
-                parse_mode="HTML"
-            )
-            return
-        
-        achievements_text = "🏆 <b>Ваши достижения:</b>\n\n"
-        
-        for ach in achievements:
-            earned_date = ach['earned_at'].split('T')[0] if 'T' in ach.get('earned_at', '') else ach.get('earned_at', 'неизвестная дата')
-            achievements_text += f"{ach['achievement_name']} — {earned_date}\n"
-        
-        achievements_text += f"\n<b>Всего достижений: {len(achievements)}</b>"
-        
-        await message.answer(achievements_text, reply_markup=get_main_keyboard(), parse_mode="HTML")
-    except Exception as e:
-        logging.error(f"Ошибка при получении достижений для {user_id}: {e}")
-        await message.answer(
-            "❌ Ошибка при загрузке достижений. Попробуйте позже.",
-            reply_markup=get_main_keyboard()
-        )
 
 
 @dp.message(Command("cancel"))
@@ -1040,46 +814,14 @@ async def send_daily_reminder():
 
 # ==================== АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ СЛОВ ====================
 
-async def auto_sync_words():
-    """Автоматически синхронизирует слова из JSON файла каждый час"""
-    try:
-        logging.info("🔄 Проверка обновлений слов из JSON...")
-        sync_words_from_json()
-        logging.info("✅ Синхронизация слов завершена успешно")
-    except Exception as e:
-        logging.error(f"❌ Ошибка при синхронизации слов: {e}")
-
-
-async def schedule_tasks():
-    """Планирует регулярные задачи"""
-    try:
-        # Добавляем задачу для автоматической синхронизации слов (каждый час)
-        scheduler.add_job(
-            auto_sync_words,
-            "interval",
-            hours=1,
-            id="auto_sync_words",
-            replace_existing=True  # Заменяет задачу если она уже была
-        )
-        logging.info("✅ Запланирована автоматическая синхронизация слов (каждый час)")
-        
-        # Добавляем задачу для отправки ежедневных напоминаний
-        scheduler.add_job(
-            send_daily_reminder,
-            "cron",
-            hour=9,
-            minute=0,
-            id="daily_reminder"
-        )
-        logging.info("✅ Запланирована ежедневная задача напоминания (9:00)")
-    except Exception as e:
-        logging.error(f"Ошибка при планировании задач: {e}")
-
-
 async def main():
     """Главная функция для запуска бота"""
     # Добавляем все задачи в планировщик
-    await schedule_tasks()
+    await schedule_tasks(
+        scheduler=scheduler,
+        send_daily_reminder=send_daily_reminder,
+        auto_sync_callback=lambda: auto_sync_words(sync_words_from_json),
+    )
     
     # Стартуем планировщик (без await - это синхронный вызов)
     scheduler.start()

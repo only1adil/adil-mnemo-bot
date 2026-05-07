@@ -5,7 +5,7 @@
 
 BOT_DIR="/opt/mnemo"
 BOT_SCRIPT="bot.py"
-LOG_FILE="/var/log/mnemo-bot.log"
+LOG_FILE="/var/log/mnemo/bot.log"
 PID_FILE="/var/run/mnemo-bot.pid"
 
 # Colors for output
@@ -39,7 +39,11 @@ start_bot() {
     
     # Start bot in background
     cd "$BOT_DIR"
-    python3 "$BOT_SCRIPT" >> "$LOG_FILE" 2>&1 &
+    if [ -x "$BOT_DIR/venv/bin/python" ]; then
+        "$BOT_DIR/venv/bin/python" "$BOT_SCRIPT" >> "$LOG_FILE" 2>&1 &
+    else
+        python3 "$BOT_SCRIPT" >> "$LOG_FILE" 2>&1 &
+    fi
     
     # Save PID
     echo $! > "$PID_FILE"
@@ -62,8 +66,8 @@ stop_bot() {
     sleep 2
     
     if is_running; then
-        echo -e "${RED}⚠️  Bot didn't stop gracefully, forcing...${NC}"
-        kill -9 "$PID" 2>/dev/null
+        echo -e "${RED}⚠️  Bot didn't stop gracefully, sending SIGTERM again...${NC}"
+        kill "$PID" 2>/dev/null
     fi
     
     rm -f "$PID_FILE"

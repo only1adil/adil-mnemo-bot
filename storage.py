@@ -6,7 +6,7 @@
 import logging
 from typing import Dict, List, Any, Optional
 from db import (
-    init_db, sync_words_from_json, rebuild_word_ids, register_user, add_word, get_all_words, get_word_by_id,
+    init_db, sync_words_from_json, register_user, add_word, get_all_words, get_word_by_id, get_connection,
     get_total_words, get_user_progress as db_get_user_progress, 
     add_or_update_word_progress as db_add_or_update_word_progress,
     increment_word_errors, get_user_quotas as db_get_user_quotas, 
@@ -19,7 +19,11 @@ from db import (
     get_error_history, get_most_problematic_words, check_and_award_achievements, 
     get_achievements,
     # Функция для отслеживания изменений файла
-    check_words_json_updated
+    check_words_json_updated,
+    # Функции для работы с уровнем пользователя
+    get_user_level, set_user_level,
+    # ✅ Новые функции для статистики по уровню
+    get_total_words_for_level, get_words_to_review_for_level, get_user_progress_for_level
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -29,8 +33,8 @@ logging.basicConfig(level=logging.INFO)
 
 def check_and_fix_word_ids() -> None:
     """
-    Проверяет целостность ID слов и исправляет нарушения последовательности.
-    Автоматически вызывается при инициализации для обеспечения корректности.
+    Проверяет целостность ID слов и логирует нарушения последовательности.
+    Автоматическое "исправление" отключено, т.к. пересборка ID опасна для ссылочной целостности.
     """
     try:
         words = get_all_words()
@@ -47,31 +51,43 @@ def check_and_fix_word_ids() -> None:
             logging.warning(f"⚠️ Обнаружены проблемы с ID слов!")
             logging.warning(f"   Найдены ID: {word_ids}")
             logging.warning(f"   Ожидаются: {expected_ids}")
-            logging.info("🔧 Начинается восстановление последовательности ID...")
-            
-            rebuild_word_ids()
-            logging.info("✅ ID слов успешно восстановлены")
+            logging.warning("🛑 Автоматический rebuild_word_ids отключен для защиты данных")
         else:
             logging.info(f"✓ ID слов корректны (всего {len(words)} слов)")
             
     except Exception as e:
         logging.error(f"❌ Ошибка при проверке ID: {e}")
 
-# Инициализируем БД при импорте
-try:
-    init_db()
-    sync_words_from_json()  # Синхронизируем слова из words.json
-    check_and_fix_word_ids()  # Проверяем и исправляем ID если нужно
-except Exception as e:
-    logging.error(f"❌ Ошибка при инициализации БД: {e}")
+def initialize_storage() -> None:
+    """Явная инициализация слоя хранения без сайд-эффектов при импорте."""
+    try:
+        init_db()
+        sync_words_from_json()
+        check_and_fix_word_ids()
+    except Exception as e:
+        logging.error(f"❌ Ошибка при инициализации БД: {e}")
 
 
 # ==================== СОВМЕСТИМОСТЬ С СУЩЕСТВУЮЩИМ API ====================
 
 def load_users() -> Dict:
     """Загружает словарь всех пользователей (для совместимости)"""
-    logging.warning("⚠ load_users() устарела - используйте get_user_progress(user_id)")
-    return {}
+    users = {}
+    try:
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT user_id, registered_at FROM users")
+        rows = cursor.fetchall()
+        for row in rows:
+            users[str(row["user_id"])] = {"registered_at": row["registered_at"]}
+    except Exception as e:
+        logging.error(f"Ошибка при загрузке пользователей: {e}")
+    finally:
+        try:
+            conn.close()
+        except Exception:
+            pass
+    return users
 
 
 def save_users(users: Dict) -> None:

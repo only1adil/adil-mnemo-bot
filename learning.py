@@ -14,10 +14,16 @@ from db import (
 )
 
 
-def get_words_for_session(user_id: int, words_per_session: int = 5, errors_in_session: int = 0) -> List[Dict]:
+def get_words_for_session(user_id: int, words_per_session: int = 5, errors_in_session: int = 0, level: str = None) -> List[Dict]:
     """
     Получает слова для сеанса обучения, учитывая квоты пользователя.
     Сначала возвращает слова на повторение, затем новые слова (если квота позволяет).
+    
+    Args:
+        user_id: ID пользователя
+        words_per_session: Количество слов в сеансе
+        errors_in_session: Количество ошибок в сеансе (не используется)
+        level: Уровень сложности (A1, A2, B1, B2). Если None, берется из профиля
     """
     quotas = get_user_quotas(user_id)
     max_new_words = quotas.get("new_words", 5)
@@ -28,7 +34,8 @@ def get_words_for_session(user_id: int, words_per_session: int = 5, errors_in_se
         user_id=user_id,
         words_per_session=words_per_session,
         max_new_words=max_new_words,
-        max_review_words=max_review_words
+        max_review_words=max_review_words,
+        level=level  # ✅ Передаём уровень
     )
 
 

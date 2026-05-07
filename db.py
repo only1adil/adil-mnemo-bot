@@ -7,6 +7,9 @@ SQLite база данных для MNEME бота.
 import sqlite3
 import json
 import logging
+import os
+import time
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple, Any
 from pathlib import Path
@@ -14,16 +17,23 @@ from pathlib import Path
 # Логирование настраивается в bot.py через setup_logging()
 logger = logging.getLogger(__name__)
 
+# Загружаем .env для корректной инициализации путей БД/JSON
+load_dotenv()
+
 # Путь к БД
-DB_PATH = "mnemo.db"
-WORDS_JSON = "words.json"
+DB_PATH = os.getenv("DATABASE_PATH", "mnemo.db")
+WORDS_JSON = os.getenv("WORDS_JSON_PATH", "words.json")
 
 # ==================== ИНИЦИАЛИЗАЦИЯ БД ====================
 
 def get_connection():
     """Получает подключение к БД"""
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=10)
     conn.row_factory = sqlite3.Row  # Возвращает результаты как словари
+    # Базовые настройки устойчивости для конкурентной записи
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("PRAGMA journal_mode = WAL")
+    conn.execute("PRAGMA busy_timeout = 10000")
     return conn
 
 
@@ -40,7 +50,8 @@ def init_db() -> None:
             registered_at TEXT DEFAULT CURRENT_TIMESTAMP,
             last_activity TEXT,
             current_error_streak INTEGER DEFAULT 0,
-            longest_error_streak INTEGER DEFAULT 0
+            longest_error_streak INTEGER DEFAULT 0,
+            current_level TEXT DEFAULT 'A1'
         )
     """)
     
@@ -53,9 +64,21 @@ def init_db() -> None:
             association TEXT,
             example TEXT,
             ipa TEXT,
+            level TEXT DEFAULT 'A1',
             created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    
+    # ✅ МИГРАЦИЯ: Добавляем колонку 'level' если она отсутствует
+    try:
+        cursor.execute("ALTER TABLE words ADD COLUMN level TEXT DEFAULT 'A1'")
+        logging.info("✅ Добавлена колонка 'level' в таблицу 'words'")
+    except sqlite3.OperationalError as e:
+        if "duplicate column name" in str(e):
+            # Колонка уже существует, это нормально
+            pass
+        else:
+            logging.warning(f"⚠️ Ошибка при добавлении колонки 'level': {e}")
     
     # Таблица прогресса пользователя по словам
     cursor.execute("""
@@ -180,19 +203,30 @@ def sync_words_from_json() -> None:
                 continue
             
             try:
+                cursor.execute("SELECT id FROM words WHERE word = ?", (word_text,))
+                existed = cursor.fetchone() is not None
                 cursor.execute("""
-                    INSERT INTO words (word, translation, association, example, ipa)
-                    VALUES (?, ?, ?, ?, ?)
+                    INSERT INTO words (word, translation, association, example, ipa, level)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(word) DO UPDATE SET
+                        translation = excluded.translation,
+                        association = excluded.association,
+                        example = excluded.example,
+                        ipa = excluded.ipa,
+                        level = excluded.level
                 """, (
                     word_text,
                     word.get('translation', ''),
                     word.get('association', ''),
                     word.get('example', ''),
-                    word.get('ipa', '')
+                    word.get('ipa', ''),
+                    word.get('level', 'A1')
                 ))
-                added_count += 1
+                if existed:
+                    updated_count += 1
+                else:
+                    added_count += 1
             except sqlite3.IntegrityError:
-                # Слово уже существует, пропускаем или обновляем
                 updated_count += 1
         
         conn.commit()
@@ -284,20 +318,20 @@ def update_user_activity(user_id: int) -> None:
 
 # ==================== РАБОТА СО СЛОВАМИ ====================
 
-def add_word(word: str, translation: str, association: str = "", example: str = "", ipa: str = "") -> int:
+def add_word(word: str, translation: str, association: str = "", example: str = "", ipa: str = "", level: str = "A1") -> int:
     """Добавляет новое слово в БД, возвращает ID слова"""
     conn = get_connection()
     cursor = conn.cursor()
     
     try:
         cursor.execute("""
-            INSERT INTO words (word, translation, association, example, ipa)
-            VALUES (?, ?, ?, ?, ?)
-        """, (word, translation, association, example, ipa))
+            INSERT INTO words (word, translation, association, example, ipa, level)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (word, translation, association, example, ipa, level))
         
         conn.commit()
         word_id = cursor.lastrowid
-        logging.info(f"✅ Добавлено слово '{word}' с ID {word_id}")
+        logging.info(f"✅ Добавлено слово '{word}' ({level}) с ID {word_id}")
         return word_id
     except sqlite3.IntegrityError:
         logging.warning(f"⚠️ Слово '{word}' уже существует")
@@ -325,7 +359,8 @@ def get_word_by_id(word_id: int) -> Optional[Dict]:
                 'translation': row['translation'],
                 'association': row['association'],
                 'example': row['example'],
-                'ipa': row['ipa']
+                'ipa': row['ipa'],
+                'level': row['level']
             }
         return None
     finally:
@@ -381,14 +416,15 @@ def rebuild_word_ids() -> None:
                 association TEXT,
                 example TEXT,
                 ipa TEXT,
+                level TEXT DEFAULT 'A1',
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP
             )
         """)
         
         # Копируем слова с новыми ID
         cursor.execute("""
-            INSERT INTO words_new (word, translation, association, example, ipa, created_at)
-            SELECT word, translation, association, example, ipa, created_at FROM words
+            INSERT INTO words_new (word, translation, association, example, ipa, level, created_at)
+            SELECT word, translation, association, example, ipa, level, created_at FROM words
             ORDER BY id
         """)
         
@@ -541,12 +577,119 @@ def get_words_to_review(user_id: int) -> int:
         conn.close()
 
 
+# ==================== ФУНКЦИИ ДЛЯ СТАТИСТИКИ ПО УРОВНЮ ====================
+
+def get_total_words_for_level(level: str) -> int:
+    """Возвращает количество слов на определенном уровне"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("SELECT COUNT(*) as count FROM words WHERE level = ?", (level,))
+        result = cursor.fetchone()
+        return result['count'] if result else 0
+    finally:
+        conn.close()
+
+
+def get_words_to_review_for_level(user_id: int, level: str) -> int:
+    """Возвращает количество слов на повторение для определённого уровня"""
+    register_user(user_id)
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("""
+            SELECT COUNT(*) as count FROM user_progress up
+            JOIN words w ON up.word_id = w.id
+            WHERE up.user_id = ? AND w.level = ?
+            AND up.next_review IS NOT NULL
+            AND datetime(up.next_review) <= datetime('now')
+            AND up.attempt_count < 4
+        """, (user_id, level))
+        
+        result = cursor.fetchone()
+        return result['count'] if result else 0
+    finally:
+        conn.close()
+
+
+def get_user_progress_for_level(user_id: int, level: str) -> Dict:
+    """
+    Получает подробный прогресс пользователя по определённому уровню.
+    Возвращает словарь с количеством:
+    - всего слов на этом уровне
+    - выученных слов
+    - слов в процессе обучения
+    - слов на повторение
+    """
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        # Всего слов на этом уровне
+        cursor.execute("SELECT COUNT(*) as count FROM words WHERE level = ?", (level,))
+        total_row = cursor.fetchone()
+        total = total_row['count'] if total_row else 0
+        
+        # Выученные слова (attempt_count >= 4)
+        cursor.execute("""
+            SELECT COUNT(*) as count FROM user_progress up
+            JOIN words w ON up.word_id = w.id
+            WHERE up.user_id = ? AND w.level = ? AND up.attempt_count >= 4
+        """, (user_id, level))
+        learned_row = cursor.fetchone()
+        learned = learned_row['count'] if learned_row else 0
+        
+        # Слова в процессе (попытки < 4, но уже начинал)
+        cursor.execute("""
+            SELECT COUNT(*) as count FROM user_progress up
+            JOIN words w ON up.word_id = w.id
+            WHERE up.user_id = ? AND w.level = ?
+            AND (up.mode = 'learning' OR up.mode = 'recall')
+            AND up.attempt_count < 4
+        """, (user_id, level))
+        learning_row = cursor.fetchone()
+        learning = learning_row['count'] if learning_row else 0
+        
+        # Слова на повторение (next_review <= теперь)
+        cursor.execute("""
+            SELECT COUNT(*) as count FROM user_progress up
+            JOIN words w ON up.word_id = w.id
+            WHERE up.user_id = ? AND w.level = ?
+            AND up.next_review IS NOT NULL
+            AND datetime(up.next_review) <= datetime('now')
+            AND up.attempt_count < 4
+        """, (user_id, level))
+        review_row = cursor.fetchone()
+        to_review = review_row['count'] if review_row else 0
+        
+        return {
+            'total': total,
+            'learned': learned,
+            'learning': learning,
+            'to_review': to_review
+        }
+    finally:
+        conn.close()
+
+
 # ==================== РАБОТА С СЕАНСАМИ ====================
 
 def save_session(user_id: int, session_data: Dict) -> None:
     """Сохраняет сеанс в БД"""
     session_id = f"{user_id}_{int(datetime.now().timestamp())}"
-    words_json = json.dumps(session_data.get('words', []))
+    words_json = json.dumps({
+        'words': session_data.get('words', []),
+        'current_index': session_data.get('current_index', 0),
+        'correct_count': session_data.get('correct_count', 0),
+        'error_count': session_data.get('error_count', 0),
+        'dont_know_count': session_data.get('dont_know_count', 0),
+        'error_streak': session_data.get('error_streak', 0),
+        'newly_learned': session_data.get('newly_learned', 0),
+        'start_time': session_data.get('start_time')
+    }, ensure_ascii=False)
     
     conn = get_connection()
     cursor = conn.cursor()
@@ -586,15 +729,28 @@ def load_session(user_id: int) -> Optional[Dict]:
         row = cursor.fetchone()
         if row:
             try:
-                words = json.loads(row['words_data'])
+                payload = json.loads(row['words_data'])
+                # Обратная совместимость: старый формат хранил только массив слов
+                if isinstance(payload, list):
+                    return {
+                        'words': payload,
+                        'current_index': row['current_index'],
+                        'correct_count': 0,
+                        'error_count': 0,
+                        'dont_know_count': 0,
+                        'error_streak': 0,
+                        'newly_learned': 0,
+                        'start_time': int(time.time())
+                    }
                 return {
-                    'words': words,
-                    'current_index': row['current_index'],
-                    'correct_count': 0,
-                    'error_count': 0,
-                    'dont_know_count': 0,
-                    'error_streak': 0,
-                    'newly_learned': 0
+                    'words': payload.get('words', []),
+                    'current_index': payload.get('current_index', row['current_index']),
+                    'correct_count': payload.get('correct_count', 0),
+                    'error_count': payload.get('error_count', 0),
+                    'dont_know_count': payload.get('dont_know_count', 0),
+                    'error_streak': payload.get('error_streak', 0),
+                    'newly_learned': payload.get('newly_learned', 0),
+                    'start_time': payload.get('start_time', int(time.time()))
                 }
             except json.JSONDecodeError:
                 logging.warning(f"⚠️ Не удалось декодировать сеанс для пользователя {user_id}")
@@ -689,6 +845,49 @@ def update_user_error_streak(user_id: int, streak: int = 0) -> None:
         """, (streak, streak, user_id))
         
         conn.commit()
+    finally:
+        conn.close()
+
+
+# ==================== РАБОТА С УРОВНЕМ ПОЛЬЗОВАТЕЛЯ ====================
+
+def get_user_level(user_id: int) -> str:
+    """Получает текущий уровень пользователя (A1, A2, B1, B2)"""
+    register_user(user_id)
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("SELECT current_level FROM users WHERE user_id = ?", (user_id,))
+        row = cursor.fetchone()
+        
+        if row and row['current_level']:
+            return row['current_level']
+        return 'A1'  # Уровень по умолчанию
+    finally:
+        conn.close()
+
+
+def set_user_level(user_id: int, level: str) -> None:
+    """Устанавливает уровень пользователя"""
+    register_user(user_id)
+    
+    # Проверяем валидность уровня
+    if level not in ['A1', 'A2', 'B1', 'B2']:
+        logging.warning(f"⚠️ Недопустимый уровень '{level}', установка A1")
+        level = 'A1'
+    
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute("""
+            UPDATE users SET current_level = ? WHERE user_id = ?
+        """, (level, user_id))
+        
+        conn.commit()
+        logging.info(f"✅ Пользователь {user_id} установил уровень {level}")
     finally:
         conn.close()
 
@@ -977,12 +1176,17 @@ def get_student_progress(user_id: int) -> Dict:
 # ==================== РАБОТА С ВЫБОРОМ СЛОВ ====================
 
 def get_words_for_session(user_id: int, words_per_session: int = 10, 
-                         max_new_words: int = 5, max_review_words: int = 20) -> List[Dict]:
+                         max_new_words: int = 5, max_review_words: int = 20, level: str = None) -> List[Dict]:
     """
     Получает слова для сеанса обучения.
     Сначала возвращает слова на повторение, потом новые слова.
+    Если level не указан, берется из профиля пользователя.
     """
     register_user(user_id)
+    
+    # Если уровень не указан, получаем из профиля пользователя
+    if level is None:
+        level = get_user_level(user_id)
     
     conn = get_connection()
     cursor = conn.cursor()
@@ -998,9 +1202,10 @@ def get_words_for_session(user_id: int, words_per_session: int = 10,
                 AND up.next_review IS NOT NULL
                 AND datetime(up.next_review) <= datetime('now')
                 AND up.attempt_count < 4
+                AND w.level = ?
             ORDER BY up.next_review ASC
             LIMIT ?
-        """, (user_id, max_review_words))
+        """, (user_id, level, max_review_words))
         
         review_words = cursor.fetchall()
         session_words.extend([dict(row) for row in review_words])
@@ -1017,9 +1222,10 @@ def get_words_for_session(user_id: int, words_per_session: int = 10,
                 WHERE w.id NOT IN (
                     SELECT word_id FROM user_progress WHERE user_id = ?
                 )
+                AND w.level = ?
                 ORDER BY w.id
                 LIMIT ?
-            """, (user_id, needed))
+            """, (user_id, level, needed))
             
             new_words = cursor.fetchall()
             session_words.extend([dict(row) for row in new_words])

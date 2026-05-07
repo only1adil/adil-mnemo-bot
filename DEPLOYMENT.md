@@ -74,7 +74,7 @@ pip install -r requirements.txt
 nano /opt/mnemo/.env.production
 
 # Заполнить BOT_TOKEN и другие параметры:
-# BOT_TOKEN=8559722395:AAH1wnWS2rEIxz5uUrBYnNJB2CjeSpZEwsM
+# BOT_TOKEN=PUT_YOUR_REAL_TOKEN_HERE
 # LOG_LEVEL=INFO
 # LOG_FILE=/var/log/mnemo/bot.log
 # DATABASE_PATH=/opt/mnemo/mnemo.db
